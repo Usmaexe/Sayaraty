@@ -6,6 +6,7 @@
 	<HEAD>
     <!-- this is a test -->
     <meta CHAESET="UTF-8">
+    hello world
     <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--it's only used for Internet explorer-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Controls the layout of the page on smaller screens-->
 		<TITLE>Sayarty - Auto-école en ligne</TITLE>
