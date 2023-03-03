@@ -112,10 +112,10 @@ textarea{
   align-items: center;
 }
 input[type="submit"] {
-  width: 160px;
+  width: 280px;
   height: 40px;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 25px;
   font:500 18px 'Roboto';
   position: relative; /* to let the transition appear in the box only  */
   cursor: pointer;
@@ -123,7 +123,6 @@ input[type="submit"] {
   1px 7px 20px 0px rgba(0,0,0,.1),
   1px 4px 5px 0px rgba(0,0,0,.1);
   background: linear-gradient(0deg, rgb(61, 122, 254) 0%,#3D56AD 100%);
-  /* transform:scaleX(1.0); */
   transition: all 250ms ease;
 }
 input[type="submit"]:hover{
