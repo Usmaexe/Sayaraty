@@ -1,0 +1,134 @@
+input{
+  border:none;
+  border-bottom: solid 1px #dadada;
+  outline:none;
+}
+textarea{
+  border:solid 1px #dadada;
+  border-radius: 10px;
+  outline:none;
+}
+.Title{
+  height: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  clear:none;
+}
+.TheHeader{
+  height: 60px;
+  font:700 50px 'Poppins';
+  justify-content: center;
+}
+.Sentence{
+  width: 400px;
+  text-align: center;
+  font:400 15px 'Poppins';
+}
+.Container{
+  width:80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  margin :50px auto;
+  box-shadow:0px 0px 30px 0px rgba(0,0,0,.1),0px 0px 5px 2px rgba(0,0,0,.1);
+}
+.rightContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #003fbd;
+  flex-basis: 40%;
+}
+.leftContainer{
+  display:flex;
+  margin:40px 0;
+  font:500 16px 'Roboto';
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 60%;
+}
+.formulaire{
+  display:flex;
+  flex-basis: 90%;
+  margin:0 auto;
+  gap:2em;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.formulaire label{
+  display:block;
+}
+.nom_email{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:1em;
+}
+.block{
+  flex-basis: 50%;
+  display:flex;
+  flex-direction: column;
+  gap:1.5em;
+}
+.objet .options{
+  display:flex;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+.objet .options input{
+  margin-right: 10px;
+}
+.coordonnees li:not(:last-child){
+	margin-bottom: 10px;
+}
+.coordonnees li{
+  margin :20px ;
+	list-style: none;
+}
+.coordonnees li i{
+  color:white;
+  font-size: 1.4em;
+  margin-right: 20px;
+}
+.coordonnees li A{
+	font:500 20px 'Poppins';
+	text-transform: capitalize;
+	text-decoration: none;
+	color: #dadada;
+	display: inline;
+	transition: all 0.3s ease;
+}
+
+.coordonnees li a:hover{
+	color: #ffffff;
+	padding-left: 9px;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="submit"] {
+  width: 160px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font:500 18px 'Roboto';
+  position: relative; /* to let the transition appear in the box only  */
+  cursor: pointer;
+  box-shadow:inset 1px 1px 6px 0px rgb(181, 207, 250,.6),
+  1px 7px 20px 0px rgba(0,0,0,.1),
+  1px 4px 5px 0px rgba(0,0,0,.1);
+  background: linear-gradient(0deg, rgb(61, 122, 254) 0%,#3D56AD 100%);
+  /* transform:scaleX(1.0); */
+  transition: all 250ms ease;
+}
+input[type="submit"]:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}

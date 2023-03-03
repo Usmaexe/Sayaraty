@@ -1,0 +1,200 @@
+/* photo de profile */
+.user-pic{
+  display:flexbox;
+  border-radius:50%;
+  object-fit:cover;
+  object-position: top;
+  cursor:pointer;
+  margin-left: 80px;
+}
+.user-pic{
+  width: 30px;
+  height:30px;
+}
+Header span{
+  flex-wrap: wrap;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+}
+/* le block contenant du mon compte et la photo de profile */
+header span span{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin:0;
+  padding:0;
+  color:#3D56AD;
+  font:18px 'Secular One';
+  letter-spacing: 0.4px;
+  margin-left: 14PX;
+  margin-right: 66px;
+}
+.mon-compte{
+  position: relative;
+}
+.mon-compte::after{
+  content:'';
+  position: absolute;
+  background-color:#febe10;
+  height:3px;
+  width:500px;
+  right:-106px; 
+  bottom:-27px;
+  transform:scaleX(0);
+  transform-origin: center;
+  transition:all 250ms ease-in;
+}
+.mon-compte:hover::after{
+  transform: scaleX(0.3);
+}
+.Nav Li a:hover:after,
+.Nav Li a:focus::after{
+  opacity: 1;
+}
+
+.sub-menu{
+  background:#fff;
+  padding:16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+}
+
+.sub-menu-wrap{
+  position:absolute;
+  top:115%;
+  right:1%;
+  width:270px;
+  max-height:0px;
+  overflow: hidden;
+  transition: max-height 700ms;
+}
+.sub-menu-wrap.open-menu{
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+  max-height: 400px;
+}
+.user-info{
+  justify-content: space-around;
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-info .user-pic{
+  object-fit:cover;
+  object-position: top;
+  width:50px;
+  height: 50px;
+  margin:0;
+  box-shadow: -2px 6px 10px 1px rgba(0,0,0,0.25);
+}
+.user-info h2{
+  font:500 20px 'Secular One';
+}
+.user-info hr{
+  height:2px;
+  width:96%;
+  opacity:1;
+  border:none;
+  background: #000;
+  margin:15px 0px;
+  box-shadow: none;
+}
+.sub-menu-link{
+  width:100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color:#000;
+  margin:12px 0px;
+}
+.sub-menu-link p{
+  font: 500 15px 'Poppins';
+  width:100%;
+  transition: all 0.5s ease;
+}
+.sub-menu-link img{
+  width: 30px;
+  padding:0px;
+  margin-right: 15px;
+}
+.sub-menu-link span{
+  font:500 22px 'Poppins';
+}
+.sub-menu-link:hover p{
+  transform: translateX(8px);
+}
+
+.InteriorHeader{
+  display:flex;
+  flex-wrap: wrap;
+  padding:150px 80px;
+  gap:100px;
+}
+.TextContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content:left;
+  flex-grow: 1;
+  width:500px;
+}
+.InteriorHeader .Title{
+  width:400px;
+  font : 800 48px 'Montserrat',sans-serif;
+}
+.TextContainer .SubTitle{
+  margin:20px 0px;
+  color:#3D56AD;
+  font:200 20px 'Monument Extended',sans-serif;
+}
+.valid-offres img{
+  width:20px;
+  margin-right: 20px;
+}
+.valid-offres span{
+  display: inline-flex;
+  transition: all 0.5s ease-in;
+}
+.valid-offres span:hover{
+  cursor: pointer;
+  transform: translateX(5px);
+  font-style: bold;
+}
+
+.valid-offres span,.button,.Essayer{
+  margin:10px 0px;
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+.buttons{
+  margin-top: 40px;
+}
+.button,.Essayer{
+  width:180px;
+  justify-content: center;
+  margin:0 20px;
+  display: inline-flex;
+  color:#3D56AD;
+  transition: all 300ms ease;
+}
+.button{
+  background: #3D56AD;
+  color:#fff;
+  padding:16px;
+  border-radius: 30px;
+}
+.button:hover,.Essayer:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+.button:hover{
+  background: #5475ed;
+}
+.Essayer:hover{
+  color:#5475ed
+}
+.boy{
+  width:500px;
+}
