@@ -4,6 +4,7 @@
   text-decoration: none;
 }  
 header{
+  top:0;
   position:fixed;
   z-index: 3;
   display:flex;
@@ -22,7 +23,7 @@ header img{
   margin-left:10px;
 }
 .Nav{
-  font:400 18px 'Secular One', sans-serif;
+  font:400 18px "Secular One";
   width: 800px;
   display:inline-flex;
   justify-content: space-around;
@@ -236,11 +237,12 @@ header img{
   font-weight: 300;
 }
 .Cto{
+  font-family: 'Poppins';
   display: inline-block;
   width:200px;
   text-align: center;
   color:white;
-  border-radius: 6px;
+  border-radius: 30px;
   padding: 15px 40px;
   cursor:pointer;
   transition: .3s ease-in-out;
@@ -248,7 +250,7 @@ header img{
   background: linear-gradient(0deg, rgb(61, 122, 254) 0%,#3D56AD 100%);
 }
 .Cto:hover{
-  box-shadow: 0 0 10px #6586ff,0 0 20px #6586ff,0 0 40px #6586ff;
+  box-shadow: 0 0 5px #8ba4ff,0 0 10px #849efd,0 0 20px #95abf8;
 }
 
 
