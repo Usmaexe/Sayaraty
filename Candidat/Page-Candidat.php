@@ -25,35 +25,35 @@
     <header>
       <img src="../IMG/SAYARATY_LOGO.png">
       <UL class="Nav">
-        <LI class = "item1"><a href="../index.html">ACCEUIL</a></LI>
-        <LI class = "item2"><a href="">&Agrave PROPOS</a></LI>
-        <LI class = "item3"><a href="">NOS OFFRES</a></LI>
-        <LI class = "item4"><a href="">CONTACTEZ-NOUS</a></LI>
+        <LI class = "item1"><a href="../index.php">ACCEUIL</a></LI>
+        <LI class = "item2"><a href="../Acceuil/A-propos.html">&Agrave PROPOS</a></LI>
+        <LI class = "item3"><a href="../Acceuil/Nos-offres.html">NOS OFFRES</a></LI>
+        <LI class = "item4"><a href="../Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
       <span class="mon-compte" onclick="toggleMenu()"><img src="../IMG/pdp1.jpg" class="user-pic"> <span>Mon compte</span></span>
       <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
           <div class="user-info">
             <img src="../IMG/pdp1.jpg" class="user-pic">
-            <h2>Nicolas Tesla</h2>
+            <h2>Anou Oussama</h2>
             <hr>
-            <a href="#" class="sub-menu-link">
+            <a href="ModifierProfile.php" class="sub-menu-link">
               <img src="../IMG/user-icon.png" alt="">
-              <P>Edit Profile</P>
+              <P>Modifier Profile</P>
             </a>
-            <a href="#" class="sub-menu-link">
+            <a href="CoursQuest.html" class="sub-menu-link">
               <img src="../IMG/cours.png" alt="">
               <P>Cours & Questionnaire</P>
             </a>
-            <a href="#" class="sub-menu-link">
+            <a href="EmploiTemps.html" class="sub-menu-link">
               <img src="../IMG/calendar.png" alt="">
               <P>Emploi du temps</P>
             </a>
-            <a href="#" class="sub-menu-link">
+            <a href="Inscription.php" class="sub-menu-link">
               <img src="../IMG/testing.png" alt="">
               <P>S'insrire au examens</P>
             </a>
-            <a href="#" class="sub-menu-link">
+            <a href="../PHP/Deconnexion.php" class="sub-menu-link">
               <img src="../IMG/logout.png" style="padding: 0px 0px 0px 4px; width: 26px" alt="">
               <P>D&eacute;connexion</P>
             </a>
@@ -63,7 +63,7 @@
     </header>
     <DIV class="InteriorHeader">
       <div class="TextContainer">
-        <span class="Title">Bienvenu Nicolas Tesla</span>
+        <span class="Title">Bienvenu Anou Oussama</span>
         <span class="SubTitle">Obtenez votre code de la route pour <b STYLE="font-size: 30px;">199DH</b></span>
         
         <div class="valid-offres">

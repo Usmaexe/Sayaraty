@@ -1,29 +1,14 @@
-.form-group img{
-  width:18px;
-  margin-right: 10px;
-  position: absolute;
-  color:white;
-  top: 13px;
-  left: 14px;
-  font-size: 24px;
-  line-height: 48px;
-  text-align: left;
-  color: #ffeba7;
-  -webkit-transition: all 200ms linear;
-  transition: all 200ms linear;
-}
 .Sayaraty{
   width:300px;
   display: block;
-  margin-left:410px;
-  margin-bottom: 30px;
+  justify-content: center;
 }
 body{
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #ffffff;
-  background-color: #311693;
+  background-color: #0080ff;
   overflow-x: hidden;
 }
 a {
@@ -33,11 +18,15 @@ a {
 a:hover {
   text-decoration: none;
 }
+.py-5{
+  padding-top: 0em!important;
+}
 .link {
+  text-align: center;
   color: #c4c3ca;
 }
 .link:hover {
-  color: #ffeba7;
+  color: #ffd969;
 }
 p {
   font-weight: 500;
@@ -47,14 +36,10 @@ h4 {
   font-weight: 600;
 }
 h6 span{
+  font-size: 18px;
   padding: 0 20px;
   text-transform: uppercase;
-  font-weight: 700;
-}
-.section{
-  position: relative;
-  width: 100%;
-  display: block;
+  font-weight: 600;
 }
 .full-height{
   min-height: 100vh;
@@ -69,13 +54,13 @@ h6 span{
   position: relative;
   display: block;
   text-align: center;
-  width: 60px;
+  width: 80px;
   height: 16px;
   border-radius: 8px;
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color: #ffeba7;
+  background-color: #ffd969;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -84,8 +69,8 @@ h6 span{
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #ffeba7;
-  background-color: #102770;
+  color: #ffd969;
+  background-color: #0126a0;
   font-family: 'unicons';
   content: '\eb4f';
   z-index: 20;
@@ -97,8 +82,109 @@ h6 span{
   transition: all 0.5s ease;
 }
 .checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
+  transform: translateX(55px) rotate(-270deg);
 }
+.form-group img{
+  width:18px;
+  margin-right: 10px;
+  position: absolute;
+  color:white;
+  top: 13px;
+  left: 14px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group .img2{
+  width: 26px;
+  margin-right: 10px;
+  position: absolute;
+  color: white;
+  top: 11px;
+  left: 225px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group .img3{
+  top:14px;
+}
+.form-group .img3v2{
+  top: 17px;
+  left: 140px;
+  width: 15px;
+}
+.form-group .img4{
+  width: 23px;
+  top: 12px;
+  left: 203px;
+}
+.form-group .img5{
+  width: 24px;
+  top: 12px;
+}
+.form-group .img6{
+  width: 21px;
+  left: 200px;
+}
+input[name="sexe"]{
+  width:30%;
+}
+input[name="date_naissance"]{
+  width:70%;
+}
+input[name="num-cin"]{
+  width:42%;
+}
+input[name="num-tel"]{
+  width:58%;
+}
+select::-webkit-outer-spin-button{
+  display:none;
+}
+label{
+  display:none;
+}
+
+.sexe{
+  padding: 13px 20px;
+  padding-left: 55px;
+  height: 48px;
+  width: 50%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #ffffff;
+  background-color: #1f2029;
+  background-image: url("../IMG/down-arrow.png");
+  border: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  /* appearance: none; */
+}
+
+.sexe::-webkit-outer-spin-button{
+  display:none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.text-center .image{
+  display: inline-flex;
+  width:300px;
+}
+
 .card-3d-wrap {
   position: relative;
   width: 440px;
@@ -107,7 +193,7 @@ h6 span{
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .card-3d-wrapper {
   width: 100%;
@@ -119,17 +205,19 @@ h6 span{
   transform-style: preserve-3d;
   transition: all 600ms ease-out; 
 }
+.ins{
+  margin-bottom: 6px!important;
+}
 .card-front, .card-back {
-  width: 100%;
-  height: 100%;
-  background-color: #2a2b38;
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 300%;
+  width: 110%;
+  height:124%;
+  background-color: #004080;
+  background-image: url(../IMG/pattern.png);
+  background-blend-mode: color-burn;
+  background-size: 50%;
   position: absolute;
-  border-radius: 6px;
-  left: 0;
+  border-radius: 10px;
+  left: -25px;
   top: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -150,15 +238,40 @@ h6 span{
   padding: 0 35px;
   top: 50%;
   left: 0;
-  transform: translate3d(0, -50%, 35px) perspective(100px);
+  transform: translate3d(0, -50%, 45px) perspective(100px);
   z-index: 20;
   display: block;
 }
 .form-group{ 
   position: relative;
-  display: block;
+  display: flex;
+  gap:1em;
   margin: 0;
   padding: 0;
+}
+.login-style, .name-style{
+  padding: 13px 20px;
+  padding-left: 55px;
+  height: 48px;
+  width: 50%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #ffffff;
+  background-color: #1f2029;
+  border: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+.login-style, .name-style:focus,
+.login-style, .name-style:active{
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
 .form-style {
   padding: 13px 20px;
@@ -249,19 +362,19 @@ h6 span{
   -ms-flex-pack: center;
   text-align: center;
   border: none;
-  background-color: #ffeba7;
-  color: #102770;
+  background-color: #ffd969;
+  color: #0080ff;
   box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
 .btn:active,
 .btn:focus{  
-  background-color: #102770;
-  color: #ffeba7;
+  background-color: #0080ff;
+  color: #ffd969;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 .btn:hover{  
-  background-color: #102770;
-  color: #ffeba7;
+  background-color: #0080ff;
+  color: #ffd969;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 /* .logo {
