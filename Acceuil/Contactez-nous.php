@@ -37,26 +37,26 @@ echo '
         <form name="formulaire" class="formulaire" action="Contactez-nous.php" method="post">
           <div class="nom_email">
             <div class="block">
-              <label>Nom</label><input type="text" name="nom" placeholder="Nom" required>
+              <label>Nom</label><input type="text" id="name" name="nom" required>
             </div>
             <div class="block">
-              <label>Email</label><input type="text" name="email" placeholder="Email" required>
+              <label>Email</label><input type="text" id="mail" name="email" required>
             </div>
           </div>
           <div class="block">
-            <label>Comment peut-on vous aider ?</label><TEXTAREA ROWS="5" COLS="60" name="contenu" placeholder="Comment peut-on vous aider ?" required></TEXTAREA>
+            <label>Comment peut-on vous aider ?</label><TEXTAREA id="text" ROWS="5" COLS="60" name="contenu" required></TEXTAREA>
           </div>
           <div class="objet">
             <label>Objet</label>
             <div class="options">
               <div>
-                <input type="radio" name="objet" value="P_contact" REQUIRED>Probl&egrave;me de contact
+                <input type="radio" name="objet" value="Problème de contact" REQUIRED>Probl&egrave;me de contact
               </div> 
               <div>
-                <input type="radio" name="objet" value="P_technique" REQUIRED>Probl&egrave;me technique
+                <input type="radio" name="objet" value="Problème technique" REQUIRED>Probl&egrave;me technique
               </div>
               <div>
-                <input type="radio" name="objet" value="Autre probleme" REQUIRED>Autre probl&egrave;me
+                <input type="radio" name="objet" value="Autre problème" REQUIRED>Autre probl&egrave;me
               </div>
             </div>
           </div>
@@ -73,26 +73,91 @@ echo '
         </UL>
       </div>
     </div>
+    <footer>
+        <DIV class="FooterContainer">
+          <DIV class="Footer-col">
+            <h4>Nos Horraires</h4>
+            <UL class="Horraire" style="color: #bbb;">
+              <LI>Lundi | 09:00 - 17:00</LI>
+              <LI>Mardi | 09:00 - 17:00</LI>
+              <LI>Mercredi | 09:00 - 17:00</LI>
+              <LI>Jeudi | 09:00 - 17:00</LI>
+              <LI>Vendredi | 09:00 - 12:00</LI>
+              <LI>Samedi | 09:00 - 19:00</LI>
+            </UL>
+          </DIV>
+          <DIV class="Footer-col">
+            <h4>aide</h4>
+            <UL class="Aide">
+              <LI><A HREF="">Q&R</A></LI>
+              <LI><A HREF="">Nos offres</A></LI>
+              <LI><A HREF="">A Propos de nous</A></LI>
+              <LI><A HREF="">Envoyer un message</A></LI>
+            </UL>
+          </DIV>
+          <DIV class="Footer-col">
+            <h4>Nos coordonn&eacute;es</h4>
+            <UL class="coordonnees">
+              <LI><i class="fa-solid fa-location-dot"></i><A HREF="">30 Bv lkhatabi, Hay Salam, Oujda</A></LI>
+              <LI><i class="fa-solid fa-phone"></i><A HREF="">06 24 67 82 90</A></LI>
+              <LI><i class="fa-solid fa-envelope"></i><A HREF="">AutoEcol99@gmail.com</A></LI>
+            </UL>
+          </DIV>
+          <DIV class="Footer-col">
+            <h4>suivez-nous</h4>
+            <DIV class="SocialMedia">
+              <a href="#"> <img src="../IMG/facebook.png" alt=""></a>
+              <a href="#"> <img src="../IMG/instagram.png" alt=""></a>
+              <a href="#"> <img src="../IMG/linkedin.png" alt=""></a>
+            </DIV>
+          </DIV>
+        </DIV>
+    </footer>
   </body>
 </html>
 ';
 if(isset($_POST["submit-button"])){
-  $insert = true;
+  $insert=true;
+  $name=$_POST["nom"];
+  $mail=$_POST["email"];
+  $text=$_POST["contenu"];     
+  $prbl=$_POST["objet"];
   if(!preg_match("#^[\w\.]+@([\w]+\.)+[\w]{2,4}$#",$_POST["email"])){
+    $insert=false;
     echo '
       <SCRIPT>
+        // alert("'.json_encode($insert).'");
         document.formulaire.innerHTML = "<p style=\"color:red;font-size:18px;\">Il faut entrer un email valide!</p>"+document.formulaire.innerHTML;
+        document.formulaire.nom.value = "'.$name.'";     
+        document.formulaire.email.value = "'.$mail.'";     
+        document.formulaire.contenu.value = `'.$text.'`;
+        var objet = document.getElementsByName("objet");
+        for(let i = 0 ; i < 3 ; i++){       
+          if("'.$prbl.'"==objet[i].value){
+            objet[i].checked;
+          }
+        }
       </SCRIPT>      
     ';
-    $insert = false;
   }
   if(!preg_match("#^[A-z\ ]+#",$_POST["nom"])){
+    $insert=false;
     echo '
       <SCRIPT>
+        // alert("'.json_encode($insert).'");
         document.formulaire.innerHTML = "<p style=\"color:red;font-size:18px;\">Il faut entrer un nom valide!</p>"+document.formulaire.innerHTML;
+        document.formulaire.nom.value = "'.$name.'";     
+        document.formulaire.email.value = "'.$mail.'";     
+        document.formulaire.contenu.value = `'.$text.'`;
+        var objet = document.getElementsByName("objet");
+        for(let i = 0 ; i < 3 ; i++){       
+          if("'.$prbl.'"==objet[i].value){
+            alert(objet[i].value+" "+"'.$prbl.'");
+            objet[i].checked=true;
+          }
+        }
       </SCRIPT>
     ';
-    $insert = false;
   }
   if($insert){
     $query = 'INSERT INTO message(nom,contenu,email,objet) VALUES("'.$_POST["nom"].'","'.$_POST["contenu"].'","'.$_POST["email"].'","'.$_POST["objet"].'")';
@@ -103,5 +168,13 @@ if(isset($_POST["submit-button"])){
       </SCRIPT>
     ';
   }
+  // if(!$insert){
+  //   echo '
+  //     <SCRIPT>
+  //       alert("hello wolrd");
+        
+  //     </SCRIPT>
+  //   ';
+  // }
 }
 ?>

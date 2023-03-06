@@ -1,7 +1,7 @@
 .about-container{
   width: 70%;
   height: 70%;
-  position:absolute;
+  /* position:absolute; */
   margin:120px 210px;
   color:#fff;
   background-color: rgb(77, 117, 234);
@@ -38,6 +38,8 @@
   font-size: 22px;
 }
 .text-container h1{
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   font:600 70px 'Montserrat';
   border-bottom: solid 10px #ffe32e;
 }
@@ -45,13 +47,13 @@
   padding:20px 0;
   text-align: justify;
 }
-.Footer-col:last-of-type{
+.SocialMedia-col{
   width: 40%;
   margin-left:0px;
   padding:0px;
 }
 
-.Footer-col h4{
+.SocialMedia-col h4{
  font-size: 18px;
  color: #ffffff;
  text-transform: capitalize;
@@ -59,7 +61,7 @@
  font-weight: 500;
  position: relative;
 }
-.Footer-col h4::before{
+.SocialMedia-col h4::before{
  content: '';
  position: absolute;
  left:0;
@@ -69,13 +71,13 @@
  box-sizing: border-box;
  width: 52%;
 }
-.Footer-col ul li:not(:last-child){
+.SocialMedia-col ul li:not(:last-child){
  margin-bottom: 10px;
 }
-.Footer-col ul li{
+.SocialMedia-col ul li{
  margin :20px 0 ;
 }
-.Footer-col .SocialMedia a{
+.SocialMedia-col .SocialMedia a{
  display: inline-block;
  height: 40px;
  width: 40px;
@@ -87,7 +89,7 @@
  color: #ffffff;
  transition: all 0.5s ease;
 }
-.Footer-col .SocialMedia img{
+.SocialMedia-col .SocialMedia img{
  display: inline-block;
  height: 40px;
  width: 40px;

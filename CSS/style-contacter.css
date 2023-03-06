@@ -1,8 +1,9 @@
 input{
   border:none;
-  border-bottom: solid 1px #dadada;
+  border-bottom: solid 1px #4e4e4e;
   outline:none;
   font-size:16px;
+  padding:4px;
 }
 
 textarea{
@@ -134,4 +135,87 @@ input[type="submit"]:hover{
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
+}
+
+.FooterContainer{
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+  flex-wrap: wrap;
+	background-color: #26252f;
+  flex-direction: row;
+  padding: 50px 80px;
+}
+.FooterContainer UL{
+  list-style: none;
+}
+.Footer-col:last-of-type{
+  margin-left:40px;
+}
+.Footer-col{
+   width: 22%;
+   padding: 0 10px;
+}
+.Footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.Footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -7px;
+	background-color: #852eff;
+	height: 2px;
+	box-sizing: border-box;
+	width: 10%;
+}
+.Footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.Footer-col ul li{
+  margin :20px 0 ;
+}
+.Footer-col ul li i{
+  color:white;
+  margin-right: 20px;
+}
+.Footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: inline;
+	transition: all 0.3s ease;
+}
+
+.Footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 6px;
+}
+.Footer-col .SocialMedia a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color:#26252f;
+	margin:0 20px 0 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.Footer-col .SocialMedia img{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
 }

@@ -1,0 +1,78 @@
+                                
+                                  <tr>
+                                      <td>Mohammed</td>
+                                      <td>3000 DH</td>
+                                      <td>
+                                          <span class="status_ter"></span> 
+                                          finished </td> 
+                                  </tr>
+                                  <tr>
+                                      <td>ali eagew</td>
+                                      <td>2500 DH</td>
+                                      <td>
+                                          <span class="status_prog"></span> 
+                                          in progress </td> 
+                                  </tr>
+                                  <tr>
+                                    <td>Oussama</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>
+                                <tr>
+                                    <td>Brahim</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_ter"></span> 
+                                        finished </td> 
+                                </tr>
+                                <tr>
+                                    <td>Othman</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>
+                                <tr>
+                                    <td>Houda</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>
+                                <tr>
+                                    <td>Safae</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_ter"></span> 
+                                        finished </td> 
+                                </tr>
+                                <tr>
+                                    <td>Ahmed</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>
+                                <tr>
+                                    <td>Brahim</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>
+                                <tr>
+                                    <td>hhknfea</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_ter"></span> 
+                                        finished </td> 
+                                </tr>
+                                <tr>
+                                    <td>ali eagew</td>
+                                    <td>2500 DH</td>
+                                    <td>
+                                        <span class="status_prog"></span> 
+                                        in progress </td> 
+                                </tr>

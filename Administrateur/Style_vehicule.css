@@ -171,19 +171,10 @@ main {
 .recent {
     display: grid;
     grid-gap:2rem ;
-  margin-top: 3.5rem;
+  margin-top: 0rem;
 
 }
-.recent1 {
-    display: grid;
-    grid-gap:2rem ;
-  margin-top: .5rem;
 
-}
-#nn{
-    color:#fff;
-    text-decoration-style :none ;
-}
 .card2 {
     background: #fff;
     border-radius: 5px;

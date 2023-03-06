@@ -76,7 +76,7 @@
           echo'
             <SCRIPT>
               alert("Bienvenu '.$_POST["logemail"].'");
-              document.location = "../Candidat/Page-Candidat.php";
+              document.location = "../Candidat";
             </SCRIPT> 
           ';
         }

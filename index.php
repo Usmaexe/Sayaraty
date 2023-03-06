@@ -21,7 +21,7 @@
       <img src="IMG/SAYARATY_LOGO.png">
       <UL class="Nav">
         <LI class = "item1"><a href="./index.php">ACCEUIL</a></LI>
-        <LI class = "item2"><a href="./Acceuil/A-propos.html">&Agrave PROPOS</a></LI>
+        <LI class = "item2"><a href="./Acceuil/A-propos.html">&Agrave; PROPOS</a></LI>
         <LI class = "item3"><a href="./Acceuil/Nos-offres.html">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="./Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
@@ -88,7 +88,6 @@
                       <img src="./'.$photo[$j].'" alt="">
                       <div class="nom">
                     ';
-                    //echo $nom[$j].' '.$note[$j] .' '.$avis[$j].'<BR>';
                     echo '<h4>'.$nom[$j].'</h4>      
                       <span>
                     ';
@@ -123,7 +122,7 @@
             </UL>
           </DIV>
           <DIV class="Footer-col">
-            <h4>aide</h4>
+            <h4>Aide</h4>
             <UL class="Aide">
               <LI><A HREF="">Q&R</A></LI>
               <LI><A HREF="">Nos offres</A></LI>
@@ -132,7 +131,7 @@
             </UL>
           </DIV>
           <DIV class="Footer-col">
-            <h4>Nos coordonnées</h4>
+            <h4>Nos coordonn&eacute;es</h4>
             <UL class="coordonnees">
               <LI><i class="fa-solid fa-location-dot"></i><A HREF="">30 Bv lkhatabi, Hay Salam, Oujda</A></LI>
               <LI><i class="fa-solid fa-phone"></i><A HREF="">06 24 67 82 90</A></LI>
