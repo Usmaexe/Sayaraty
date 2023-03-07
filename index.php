@@ -22,7 +22,7 @@
       <UL class="Nav">
         <LI class = "item1"><a href="./index.php">ACCEUIL</a></LI>
         <LI class = "item2"><a href="./Acceuil/A-propos.html">&Agrave; PROPOS</a></LI>
-        <LI class = "item3"><a href="./Acceuil/Nos-offres.html">NOS OFFRES</a></LI>
+        <LI class = "item3"><a href="./Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="./Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
       <a class="item5" href="./Acceuil/Connexion_inscription.html"> <span>Connexion</span></a></DIV>

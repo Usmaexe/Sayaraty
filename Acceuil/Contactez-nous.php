@@ -23,7 +23,7 @@ echo '
       <UL class="Nav">
         <LI class = "item1"><a href="../index.php">ACCEUIL</a></LI>
         <LI class = "item2"><a href="A-propos.html">&Agrave PROPOS</a></LI>
-        <LI class = "item3"><a href="Nos-offres.html">NOS OFFRES</a></LI>
+        <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
       <a class="item5" href="Connexion_inscription.html"> <span>Connexion</span></a></DIV>
@@ -126,7 +126,6 @@ if(isset($_POST["submit-button"])){
     $insert=false;
     echo '
       <SCRIPT>
-        // alert("'.json_encode($insert).'");
         document.formulaire.innerHTML = "<p style=\"color:red;font-size:18px;\">Il faut entrer un email valide!</p>"+document.formulaire.innerHTML;
         document.formulaire.nom.value = "'.$name.'";     
         document.formulaire.email.value = "'.$mail.'";     
@@ -168,13 +167,5 @@ if(isset($_POST["submit-button"])){
       </SCRIPT>
     ';
   }
-  // if(!$insert){
-  //   echo '
-  //     <SCRIPT>
-  //       alert("hello wolrd");
-        
-  //     </SCRIPT>
-  //   ';
-  // }
 }
 ?>

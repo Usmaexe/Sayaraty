@@ -32,7 +32,7 @@
       <UL class="Nav">
         <LI class = "item1"><a href="../index.php">ACCEUIL</a></LI>
         <LI class = "item2"><a href="../Acceuil/A-propos.html">&Agrave PROPOS</a></LI>
-        <LI class = "item3"><a href="../Acceuil/Nos-offres.html">NOS OFFRES</a></LI>
+        <LI class = "item3"><a href="../Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="../Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
       <span class="mon-compte" onclick="toggleMenu()"><img src="../IMG/pdp1.jpg" class="user-pic"> <span>Mon compte</span></span>

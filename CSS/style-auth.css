@@ -88,7 +88,6 @@ h6 span{
   width:18px;
   margin-right: 10px;
   position: absolute;
-  color:white;
   top: 13px;
   left: 14px;
   font-size: 24px;
@@ -139,11 +138,14 @@ input[name="sexe"]{
 input[name="date_naissance"]{
   width:70%;
 }
-input[name="num-cin"]{
+input[name="num_cin"]{
   width:42%;
 }
-input[name="num-tel"]{
+input[name="num_tel"]{
   width:58%;
+}
+input[name="logpass"]{
+  width:100%;
 }
 select::-webkit-outer-spin-button{
   display:none;
@@ -164,8 +166,7 @@ label{
   letter-spacing: 0.5px;
   outline: none;
   color: #ffffff;
-  background-color: #1f2029;
-  background-image: url("../IMG/down-arrow.png");
+  background-color: rgb(0 123 255 / 24%);
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -210,8 +211,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .card-front, .card-back {
   width: 110%;
-  height:124%;
-  background-color: #004080;
+  height:128%;
+  background-color: #004f9d;
   background-image: url(../IMG/pattern.png);
   background-blend-mode: color-burn;
   background-size: 50%;
@@ -219,6 +220,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 10px;
   left: -25px;
   top: 0;
+  box-shadow: 0px 0px 20px 2px rgba(0,0,0,.4);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -261,7 +263,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: 0.5px;
   outline: none;
   color: #ffffff;
-  background-color: #1f2029;
+  background-color: rgb(0 123 255 / 24%);
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -285,7 +287,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: 0.5px;
   outline: none;
   color: #ffffff;
-  background-color: #1f2029;
+  background-color: rgb(0 123 255 / 24%);
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -377,16 +379,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #ffd969;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
-/* .logo {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  display: block;
-  z-index: 100;
-  transition: all 250ms linear;
-} */
+
 .logo img {
   height: 26px;
   width: auto;
   display: block;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    content:'';
+    background-color: transparent !important;
 }
