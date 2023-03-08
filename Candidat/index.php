@@ -1,14 +1,15 @@
 <?PHP
   require("../PHP/Connexion_BD.php");
-?>
+  session_start();
+  echo'
 <!DOCTYPE HTML>
 <HTML>
 	<HEAD>
     <meta CHAESET="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--it's only used for Internet explorer-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--it\'s only used for Internet explorer-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Controls the layout of the page on smaller screens-->
 		<TITLE>Sayarty - Espace Candidat</TITLE>
-    <script src="../SCRIPTS/Page-Candidat.js"></script>
+    <!-- <script type="module" src="../JS/Page-Candidat.js"></script> -->
     <link rel="icon" href="../IMG/SAYARATY_Icon.png">
 		<link rel="stylesheet" href="../CSS/style-index.css">
 		<link rel="stylesheet" href="../CSS/style-candidat.css">
@@ -19,12 +20,7 @@
     <link href="//db.onlinewebfonts.com/c/9563028603929a5ec058577b3fb5520a?family=Whipsmart" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
-    <!-- <script>
-      var subMenu = document.getElementById("subMenu");
-      function toggleMenu(){
-        subMenu.classList.toggle("open-menu");
-      }
-    </script> -->
+
   </HEAD>
 	<BODY>
     <header>
@@ -35,12 +31,16 @@
         <LI class = "item3"><a href="../Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="../Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
+      <!-- this code isn\'t working -->
+      <!-- <script type="module" src="../JS/Page-Candidat.js"> 
+        import { toggleMenu() } from "../JS/Page-Candidat.js";
+      </script> -->
       <span class="mon-compte" onclick="toggleMenu()"><img src="../IMG/pdp1.jpg" class="user-pic"> <span>Mon compte</span></span>
       <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
           <div class="user-info">
             <img src="../IMG/pdp1.jpg" class="user-pic">
-            <h2>Anou Oussama</h2>
+            <h2>'.$_SESSION["login"].'</h2>
             <hr>
             <a href="ModifierProfile.php" class="sub-menu-link">
               <img src="../IMG/user-icon.png" alt="">
@@ -56,7 +56,7 @@
             </a>
             <a href="Inscription.php" class="sub-menu-link">
               <img src="../IMG/testing.png" alt="">
-              <P>S'insrire au examens</P>
+              <P>S\'insrire au examens</P>
             </a>
             <a href="../PHP/Deconnexion.php" class="sub-menu-link">
               <img src="../IMG/logout.png" style="padding: 0px 0px 0px 4px; width: 26px" alt="">
@@ -66,14 +66,18 @@
         </div>
       </div>
     </header>
+   
     <DIV class="InteriorHeader">
-      <div class="TextContainer">
-        <span class="Title">Bienvenu Anou Oussama</span>
-        <span class="SubTitle">Obtenez votre code de la route pour <b STYLE="font-size: 30px;">199DH</b></span>
+      <div class="TextContainer">';
+        $query = "SELECT prix FROM offre where id_offre=1";
+        $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+        echo '
+        <span class="Title">Bienvenu '.$_SESSION["login"].' </span>
+        <span class="SubTitle">Obtenez votre code de la route pour <b STYLE="font-size: 30px;">'.$ligne[0].' DH</b></span>
         
         <div class="valid-offres">
-          <span><img src="../IMG/check.png" alt="">2 500 questions de code en ligne conformes &agrave; l'examen</span>
-          <span><img src="../IMG/check.png" alt="">Entra&icirc;nez-vous n'importe o&ugrave; et n'importe quand en illimit&eacute;</span>
+          <span><img src="../IMG/check.png" alt="">2 500 questions de code en ligne conformes &agrave; l\'examen</span>
+          <span><img src="../IMG/check.png" alt="">Entra&icirc;nez-vous n\'importe o&ugrave; et n\'importe quand en illimit&eacute;</span>
           <span><img src="../IMG/check.png" alt="">Une &eacute;quipe p&eacute;dagogique pr&ecirc;te &agrave; accompagner votre r&eacute;ussite</span>
         </div>
         <span class="buttons"><div class="button">Acheter le pack code</div> <div class="Essayer">Essayer gratuitement</div></span>
@@ -81,11 +85,10 @@
       <img src="../IMG/boy-exam.jpg" class="boy">
     </DIV>
     <DIV class="InteriorBottomBar">
-      L'une des meilleurs Auto-école au Maroc
+      L\'une des meilleurs Auto-école au Maroc
       <span>SAYRATY est devenu la nouvelle façon de préparer son code de la route</span>
     </DIV>  
-    <div class="card-container">
-      <?PHP
+    <div class="card-container">';
         $query = "SELECT * FROM Avis";
         $i=0;$avis;$nom;$note;$photo;
         if($result = mysqli_query($connect,$query)){
@@ -131,7 +134,7 @@
             <p>'.$avis[$j].'</p>
           </div>';
         }
-      ?>
+      echo'
     </div>    
   </DIV>	
   <footer>
@@ -180,5 +183,7 @@
       subMenu.classList.toggle("open-menu");
     }
   </script>
-
 </HTML>
+';
+
+?>

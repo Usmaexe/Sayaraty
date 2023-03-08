@@ -75,7 +75,6 @@ header span span{
   max-height: 400px;
 }
 .user-info{
-  justify-content: space-around;
   display:flex;
   align-items: center;
   flex-wrap: wrap;
@@ -85,10 +84,11 @@ header span span{
   object-position: top;
   width:50px;
   height: 50px;
-  margin:0;
+  margin:0px 14px;
   box-shadow: -2px 6px 10px 1px rgba(0,0,0,0.25);
 }
 .user-info h2{
+  width:65%;
   font:500 20px 'Secular One';
 }
 .user-info hr{
@@ -99,6 +99,7 @@ header span span{
   background: #000;
   margin:15px 0px;
   box-shadow: none;
+  margin-left: 4px;
 }
 .sub-menu-link{
   width:100%;
@@ -139,7 +140,7 @@ header span span{
   width:500px;
 }
 .InteriorHeader .Title{
-  width:400px;
+  width:500px;
   font : 800 48px 'Montserrat',sans-serif;
 }
 .TextContainer .SubTitle{

@@ -28,11 +28,9 @@
 }
 .cardContainer div{
   padding:40px;
-  /* border-radius: 10px; */
   font-family: 'Montserrat';
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 .firstCard{
@@ -60,7 +58,7 @@
   width:340px;
   font:700 34px 'Montserrat';
 }
-.firstCard .cardTitle,.thirdCard .cardTitle{
+.firstCard .cardTitle{
   margin-bottom: 20px;
 }
 .cardSubTitle, .cardSubSubTitle{
@@ -68,7 +66,7 @@
   font:400 14px 'Montserrat';
   margin-bottom: 20px;
 }
-.secondCard .cardSubTitle{
+.secondCard .cardSubTitle,.thirdCard .cardSubTitle{
   font:700 18px 'Montserrat';
 }
 .cardContainer hr{
@@ -106,4 +104,7 @@
   color: #3a75ff;
   background-color:white;
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.6);
+}
+.thirdCard a{
+  margin-top:0px;
 }

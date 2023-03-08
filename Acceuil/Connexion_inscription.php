@@ -1,10 +1,11 @@
 <?PHP
 require("../PHP/Connexion_BD.php");
-echo '
+session_start();
+?>
 <!DOCTYPE html>
-    <html lang=\"en\" >
+    <html lang="en" >
     <head>
-      <meta charset=\"UTF-8\">
+      <meta charset="UTF-8">
       <title>Sayaraty - Connexion</title>
       <link rel="icon" href="../IMG/SAYARATY_Icon.png">
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
@@ -55,8 +56,8 @@ echo '
                                     <img class="img3" src="../IMG/gender.png">
                                     <label for="select-area">select</label>
                                     <select name="sexe" id="select-area" class="sexe">
-                                      <option class="sexe" value="Homme">Homme</option>
-                                      <option class="sexe" value="Femme">Femme</option>
+                                      <option class="sexe" name="Homme" value="Homme">Homme</option>
+                                      <option class="sexe" name="Femme" value="Femme">Femme</option>
                                     </select>
                                     <img class="img4" src="../IMG/calendarW.png">
                                     <input type="date" name="date_naissance" class="login-style" placeholder="login" autocomplete="off" required>
@@ -92,7 +93,8 @@ echo '
         </div>
     </body>
 </html>
-';
+
+<?PHP
 if(isset($_POST["submit-button1"])){
   $query = "SELECT Email_candidat FROM candidat";
   $log = $_POST["logemail"];
@@ -165,12 +167,12 @@ if(isset($_POST["submit-button1"])){
       $isAdmin=true;
     }
     if(in_array($_POST["pass"],$mdp)){
-      session_start();
-      $_SESSION['login']=$_POST["logemail"];
+      $_SESSION["login"]=$_POST["logemail"];
       if($isCandidat){
         echo'
           <SCRIPT>
             alert("Bienvenu '.$_POST["logemail"].'");
+            //document.location = "test.php"
             document.location = "../Candidat";
           </SCRIPT> 
         ';
@@ -212,15 +214,8 @@ else {
       document.Connexion.pass.value = "";
     </SCRIPT> 
     ';
-      //this script isn't working when there is saved data in the browser! 
-      // document.getElementById("logcontainer").innerHtml = `
-      //   <img src="../IMG/user.png">
-      //   <input type="text" name="logemail" class="form-style" value="" placeholder="Email ou Login" autocomplete="off" required>
-      // `;
 }
 if(isset($_POST["submit-button2"])){  
-    // if(!(isset($_SERVER['HTTP_CACHE_CONTROL']))){
-      // alert("'.$_POST["submit-button2"].'");
       $insert = true;$error;
       if(!preg_match("#^[\w\.]+@([\w]+\.)+[\w]{2,4}$#",$_POST["email"])){     
         $error="email";
@@ -249,6 +244,10 @@ if(isset($_POST["submit-button2"])){
               document.Inscription.name.value = "'.$_POST["name"].'";
               document.Inscription.num_cin.value = "'.$_POST["num_cin"].'";
               document.Inscription.num_tel.value = "'.$_POST["num_tel"].'";
+              let option = "'.$_POST["sexe"].'";
+              document.Inscription.sexe.options.namedItem(option).selected = true;
+              let date = "'.$_POST["date_naissance"].'";
+              document.Inscription.date_naissance.value = date;
               let rot = document.getElementsByName("reg-log");
               rot[0].checked=true;
             </script>
@@ -290,6 +289,10 @@ if(isset($_POST["submit-button2"])){
               document.Inscription.name.value = "'.$_POST["name"].'";
               document.Inscription.num_cin.value = "'.$_POST["num_cin"].'";
               document.Inscription.num_tel.value = "'.$_POST["num_tel"].'";
+              let option = "'.$_POST["sexe"].'";
+              document.Inscription.sexe.options.namedItem(option).selected = true;
+              let option = "'.$_POST["date_naissance"].'";
+              document.Inscription.date_naissance.value = date;
               let rot = document.getElementsByName("reg-log");
               rot[0].checked=true;
             </script>

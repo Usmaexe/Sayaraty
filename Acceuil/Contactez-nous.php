@@ -26,7 +26,7 @@ echo '
         <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
-      <a class="item5" href="Connexion_inscription.html"> <span>Connexion</span></a></DIV>
+      <a class="item5" href="Connexion_inscription.php"> <span>Connexion</span></a></DIV>
     </header>
     <div class="Title">
       <h1 class="TheHeader">CONTACTEZ-NOUS</h1>

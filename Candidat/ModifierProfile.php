@@ -11,6 +11,8 @@
         <link rel="icon" href="../IMG/SAYARATY_Icon.png">
         <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" href="../CSS/style-candidat.css">
+        <link rel="stylesheet" href="../CSS/style-contacter.css">
+        <link rel="stylesheet" href="../CSS/style-modifier.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.cdnfonts.com/css/monument-extended" rel="stylesheet">
@@ -60,6 +62,44 @@
             </div>
           </div>
         </header>
+        <div class="Title">
+          <h1 class="TheHeader">CONTACTEZ-NOUS</h1>
+          <p class="Sentence">L\'&eacute;quipe d\'assistance est disponible 24/7 pour vous aider et r&eacute;pondre &agrave; vos questions.</p>
+        </div>
+        <div class="Container">
+          <div class="leftContainer">     
+            <form name="formulaire" class="formulaire" action="Contactez-nous.php" method="post">
+              <div class="nom_email">
+                <div class="block">
+                  <label>Nom</label><input type="text" id="name" name="nom" required>
+                </div>
+                <div class="block">
+                  <label>Email</label><input type="text" id="mail" name="email" required>
+                </div>
+              </div>
+              <div class="block">
+                <label>Comment peut-on vous aider ?</label><TEXTAREA id="text" ROWS="5" COLS="60" name="contenu" required></TEXTAREA>
+              </div>
+              <div class="objet">
+                <label>Objet</label>
+                <div class="options">
+                  <div>
+                    <input type="radio" name="objet" value="Problème de contact" REQUIRED>Probl&egrave;me de contact
+                  </div> 
+                  <div>
+                    <input type="radio" name="objet" value="Problème technique" REQUIRED>Probl&egrave;me technique
+                  </div>
+                  <div>
+                    <input type="radio" name="objet" value="Autre problème" REQUIRED>Autre probl&egrave;me
+                  </div>
+                </div>
+              </div>
+              <div class="submit">
+              <input name="submit-button" type="submit" value="Envoyer">
+              </div>
+            </form>
+          </div>
+        </div>
       </BODY>
       <script>
         var subMenu = document.getElementById("subMenu");

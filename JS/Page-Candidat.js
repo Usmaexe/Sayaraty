@@ -1,4 +1,4 @@
 var subMenu = document.getElementById("subMenu");
-function toggleMenu(){
+export default function toggleMenu(){
   subMenu.classList.toggle("open-menu");
 }

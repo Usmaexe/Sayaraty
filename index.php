@@ -25,7 +25,7 @@
         <LI class = "item3"><a href="./Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="./Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
-      <a class="item5" href="./Acceuil/Connexion_inscription.html"> <span>Connexion</span></a></DIV>
+      <a class="item5" href="./Acceuil/Connexion_inscription.php"> <span>Connexion</span></a></DIV>
     </header>
     <DIV class="Content">
       <DIV class="InteriorHeader">

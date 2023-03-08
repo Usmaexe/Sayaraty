@@ -32,13 +32,16 @@ echo '
           <LI class = "item3"><a href="Nos-offres.html">NOS OFFRES</a></LI>
           <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
         </UL>
-        <a class="item5" href="Connexion_inscription.html"> <span>Connexion</span></a></DIV>
+        <a class="item5" href="Connexion_inscription.php"> <span>Connexion</span></a></DIV>
       </header>
       <div class="firstContainer">
         <img src="../IMG/offres.jpg" alt="">
         <div class="container">
-          <div class="theTitleOfPage">
-            Votre permis de conduite en mieux d&egrave;s <b>2990DH</b>
+          <div class="theTitleOfPage">';
+          $query = "SELECT Prix FROM offre where id_offre=2";
+          $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+          echo '
+            Votre permis de conduite en mieux d&egrave;s <b>'.$ligne[0].' DH</b>
           </div>
           <div class="subtitle">
             *par rapport &agrave; une auto-&eacute;cole traditionnelle
@@ -53,7 +56,7 @@ echo '
           while(($ligne=mysqli_fetch_row($result))&&$i<3){
             $chaine=explode("-",$ligne[1]);
             $titre=$chaine[0];
-            if($i==1){$subtitre=$chaine[1];}
+            if($i==1||$i==2){$subtitre=$chaine[1];}
             $prix=$ligne[2];
             $commentaire=$ligne[4];
             if($i==0){$nbcard="first";}
@@ -62,7 +65,7 @@ echo '
             echo '
               <div class="'.$nbcard.'Card">
                 <span class="cardTitle">'.$titre.'</span>';
-            if($i==1){
+            if($i==1 || $i==2){
               echo '<span class="cardSubTitle">'.$subtitre.'</span>';
               echo '<span class="cardSubSubTitle">'.$commentaire.'</span>';
             }
