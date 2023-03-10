@@ -9,6 +9,7 @@
     <link rel="icon" href="../IMG/SAYARATY_Icon.png">
 		<link rel="stylesheet" href="../CSS/style-index.css">
 		<link rel="stylesheet" href="../CSS/style-apropos.css">
+		<link rel="stylesheet" href="../CSS/style-candidat.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +25,48 @@
         <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
       </UL>
-      <a class="item5" href="Connexion_inscription.php"> <span>Connexion</span></a></DIV>
+      <?PHP
+        session_start();
+        if(isset($_SESSION["login"])){
+          $query = "SELECT PHOTO FROM Candidat WHERE Login_candidat='".$_SESSION["login"]."'";
+          $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+          echo '
+          <span class="mon-compte" onclick="toggleMenu()"><img src="'.$ligne[0].'" class="user-pic"> <span>Mon compte</span></span>
+          <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+              <div class="user-info">
+                <img src="'.$ligne[0].'" class="user-pic">
+                <h2>'.$_SESSION["login"].'</h2>
+                <hr>
+                <a href="ModifierProfile.php" class="sub-menu-link">
+                  <img src="../IMG/modify.png" alt="">
+                  <P>Modifier Profile</P>
+                </a>
+                <a href="CoursQuest.html" class="sub-menu-link">
+                  <img src="../IMG/cours.png" alt="">
+                  <P>Cours & Questionnaire</P>
+                </a>
+                <a href="EmploiTemps.html" class="sub-menu-link">
+                  <img src="../IMG/calendar.png" alt="">
+                  <P>Emploi du temps</P>
+                </a>
+                <a href="Inscription.php" class="sub-menu-link">
+                  <img src="../IMG/testing.png" alt="">
+                  <P>S\'insrire au examens</P>
+                </a>
+                <a href="../PHP/Deconnexion.php" class="sub-menu-link">
+                  <img src="../IMG/logout.png" style="padding: 0px 0px 0px 4px; width: 26px" alt="">
+                  <P>D&eacute;connexion</P>
+                </a>
+              </div>
+            </div>
+          </div>
+          ';
+        }
+        else{
+          echo '<a class="item5" href="./Acceuil/Connexion_inscription.php"> <span>Connexion</span></a></DIV>';
+        }
+      ?>
     </header>
     <div class="about-container">
         <div class="image-container">
@@ -88,4 +130,10 @@
         </DIV>
     </footer>
   </BODY>
+  <script>
+    var subMenu = document.getElementById("subMenu");
+    function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+    }
+  </script>
 </HTML>

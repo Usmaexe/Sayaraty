@@ -1,5 +1,6 @@
 <?PHP
 require("../PHP/Connexion_BD.php");
+session_start();
 $query = "SELECT * FROM offre where id_offre=1 and statut=true";
 $titre;$commentaire;$prix;$statut;
 if($result=mysqli_query($connect,$query)){
@@ -18,6 +19,7 @@ echo '
       <link rel="icon" href="../IMG/SAYARATY_Icon.png">
       <link rel="stylesheet" href="../CSS/style-index.css">
       <link rel="stylesheet" href="../CSS/style-offres.css">
+      <link rel="stylesheet" href="../CSS/style-candidat.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +125,12 @@ echo '
             </DIV>
           </DIV>
       </footer>
+      <script>
+        var subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+          subMenu.classList.toggle("open-menu");
+        }
+      </script>
     </BODY>
   </HTML>
 ';

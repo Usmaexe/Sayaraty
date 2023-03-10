@@ -34,16 +34,19 @@
       <!-- this code isn\'t working -->
       <!-- <script type="module" src="../JS/Page-Candidat.js"> 
         import { toggleMenu() } from "../JS/Page-Candidat.js";
-      </script> -->
-      <span class="mon-compte" onclick="toggleMenu()"><img src="../IMG/pdp1.jpg" class="user-pic"> <span>Mon compte</span></span>
+      </script> -->';
+      $query = "SELECT PHOTO FROM Candidat WHERE Login_candidat='".$_SESSION["login"]."'";
+      $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+      echo '
+      <span class="mon-compte" onclick="toggleMenu()"><img src="'.$ligne[0].'" class="user-pic"> <span>Mon compte</span></span>
       <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
           <div class="user-info">
-            <img src="../IMG/pdp1.jpg" class="user-pic">
+            <img src="'.$ligne[0].'" class="user-pic">
             <h2>'.$_SESSION["login"].'</h2>
             <hr>
             <a href="ModifierProfile.php" class="sub-menu-link">
-              <img src="../IMG/user-icon.png" alt="">
+              <img src="../IMG/modify.png" alt="">
               <P>Modifier Profile</P>
             </a>
             <a href="CoursQuest.html" class="sub-menu-link">

@@ -1,0 +1,146 @@
+.Title{
+  height:200px;
+}
+label{
+  font:700 22px 'Noto Sans'!important;
+}
+.picTitle{
+  margin-right:122px;
+}
+.block{
+  gap:1em;
+}
+
+input,.sexe{
+  background-color: #e6e6e6;
+  font:500 18px 'Noto Sans'!important;
+  border: solid 2px #b9b9b9;
+  border-radius: 6px;
+  padding:10px;
+}
+input:focus,.sexe:focus{
+  background-color: #fff;
+}
+h1{
+  position: relative;
+  z-index: 1;
+}
+h1::before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: -7px;
+  height: 5px;
+  background-color: #ffb52e;
+  box-sizing: border-box;
+  width: 99%;
+  z-index: 2;
+}
+.subTitle{
+  font: 400 16px 'Noto Sans'!important;
+  width: 300px;
+  margin-bottom: 40px;
+}
+.leftContainer{
+  flex-basis: 70%;
+}
+.rightContainer{
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top:40px;
+  /* gap:1.5em; */
+  flex-basis: 30%;
+}
+.image{
+  width:200px;
+  height: 200px;
+  margin-bottom: 30px;
+  display: flex;    
+  align-items: center;
+  justify-content: center;
+}
+.image img{
+  display:inline-flex;
+  width:200px;
+  height:200px;
+  border-radius: 20px;
+  text-align: center;
+}
+.rightContainer input{
+  width:280px;
+  margin-top:20px;
+}
+.rightContainer form{
+  width: 90%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:1.2em;
+  align-items: center;
+}
+input[type="submit"],input[type="reset"]{
+  font:900 20px 'Noto Sans';
+  color:black;
+  text-align: center;
+  background: white!important;
+  border: solid 1px #b9b9b9;
+  padding:0px;
+  box-shadow: none;
+}
+input[type="submit"]:hover,input[type="reset"]:hover{
+  cursor: pointer;
+  transform: scale(1.0)!important;
+  -webkit-transform: scale(1.0)!important;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  margin-right: 2px;
+  -ms-transform: scale(1.0)!important;
+}
+
+input[type="file"]{
+  width:180px;
+  font-size: 12px!important;
+  padding:5px;
+}
+.sexe{
+  width:200px;
+}
+.secondBlock,.thirdBlock{
+  display:flex;
+  flex-direction: row;
+  /* gap:1.5em; */
+  justify-content: space-between;
+}
+.forthBlock{
+  gap:1.2em;
+  display:flex;
+  flex-direction: row;
+}
+.secondBlock{
+  margin-top: 20px;
+}
+.thirdBlock .first{
+  width:65%;
+}
+.thirdBlock .second{
+  width:35%;
+}
+.thirdBlock .first input{
+  width:93%;
+}
+.secondBlock .second input{
+  width:200px;
+} 
+.forthBlock input{
+  width:200px;
+}
+.forthBlock .first input{
+  width:300px;
+}
+input[type="date"]{
+  padding:10px;
+}
+.secondBlock,.thirdBlock,.forthBlock label{
+  margin-bottom: 10px!important;
+  margin-left: 0px!important;
+}

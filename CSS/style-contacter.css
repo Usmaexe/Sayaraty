@@ -13,6 +13,7 @@ textarea{
   outline:none;
 }
 .Title{
+  text-transform: uppercase;
   height: 250px;
   display: flex;
   flex-wrap: wrap;
