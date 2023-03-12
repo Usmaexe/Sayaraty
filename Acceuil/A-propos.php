@@ -119,9 +119,9 @@
             <h4>aide</h4>
             <UL class="Aide">
               <LI><A HREF="">Q&R</A></LI>
-              <LI><A HREF="">Nos offres</A></LI>
-              <LI><A HREF="">A Propos de nous</A></LI>
-              <LI><A HREF="">Envoyer un message</A></LI>
+              <LI><A HREF="Nos-offres.php">Nos offres</A></LI>
+              <LI><A HREF="A-propos.php">A Propos de nous</A></LI>
+              <LI><A HREF="Contactez-nous.php">Envoyer un message</A></LI>
             </UL>
           </DIV>
           <DIV class="Footer-col">
