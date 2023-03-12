@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   width:80%;
+  gap:5em;
   margin:150px auto; margin-bottom: 100px;
 }
 .animated{
@@ -49,25 +50,86 @@
   width: 99%;
 }
 .UnderPg{
-  width:90%;
-  height:140px;
+  width: 80%;
+  height: 140px;
   display: flex;
   flex-direction: row;
   font-family: 'Noto Sans';
   justify-content: center;
-  gap:1.5em;
+  justify-content: space-around;
   align-items: center;
-  background-color: #b9b9b9;
-  border-radius: 30px;
-  
+  background-color: #dfdfdf;
+  border: solid 2px #c6c6c6;
+  box-shadow: 0px 0px 19px 0px rgb(0 0 0 / 34%);
+  border-radius: 21px;
+  padding: 10px 0px;
 }
+
 hr{
   height:90%;
+  width:4px;
+  opacity:1;
+  border:none;
+  border-radius: 20px;
+  background: #8c8c8c;
+  box-shadow: none;
+
 }
 .first, .second{
+  width:200px;
   display: flex;
   gap:1em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.ftitle{
+  font:600 40px 'Montserrat';
+}
+.fcontent,.scontent{
+  font: 500 20px 'Noto Sans';
+    background-color: #ffb52e;
+    border-radius: 30px;
+    width: 200px;
+    text-align: center;
+    padding: 8px 18px
+}
+.scontent{
+  width:100px;
+}
+.Lesson{
+  width:90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family:'Noto Sans';
+  justify-items: left;
+  border:solid 2px #cdcdcd;
+  border-radius: 10px;
+  padding:20px;
+}
+.Lesson img{
+  width:50px;
+}
+.chapter img{
+  width:34px;
+}
+.Lesson div{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;padding-bottom: 30px;
+  gap:2em;
+}
+.Ltitle{
+  font:600 20px 'Noto Sans';
+  border-bottom: solid 1px #cdcdcd;
+}
+.chapter{
+  padding-top:30px!important;
+  margin-left: 30px;
+}
+.lesson div{
+  width:100%;
+} 
