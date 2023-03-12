@@ -1,0 +1,73 @@
+.Container{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:80%;
+  margin:150px auto; margin-bottom: 100px;
+}
+.animated{
+  width:40%;
+  height:500px;
+}
+.Head{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.Paragraph{
+  display:flex;
+  flex-direction: column;
+  gap:2em;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:60%;
+}
+.title{
+  position: relative;
+  font:900 40px 'Noto Sans';
+}
+.content{
+  padding:40px;
+  font:300 16px 'Noto Sans';
+  text-align: justify;
+  line-height: 25px;
+}
+.title::before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: -7px;
+  height: 5px;
+  background-color: #ffb52e;
+  box-sizing: border-box;
+  width: 99%;
+}
+.UnderPg{
+  width:90%;
+  height:140px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Noto Sans';
+  justify-content: center;
+  gap:1.5em;
+  align-items: center;
+  background-color: #b9b9b9;
+  border-radius: 30px;
+  
+}
+hr{
+  height:90%;
+}
+.first, .second{
+  display: flex;
+  gap:1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

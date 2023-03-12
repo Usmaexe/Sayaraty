@@ -166,10 +166,10 @@
           <DIV class="Footer-col">
             <h4>Aide</h4>
             <UL class="Aide">
-              <LI><A HREF="">Q&R</A></LI>
-              <LI><A HREF="">Nos offres</A></LI>
-              <LI><A HREF="">A Propos de nous</A></LI>
-              <LI><A HREF="">Envoyer un message</A></LI>
+              <LI><A HREF="#">Q&R</A></LI>
+              <LI><A HREF="./Acceuil/Nos-offres.php">Nos offres</A></LI>
+              <LI><A HREF="./Acceuil/A-propos.php">A Propos de nous</A></LI>
+              <LI><A HREF="./Acceuil/Contactez-nous.php">Envoyer un message</A></LI>
             </UL>
           </DIV>
           <DIV class="Footer-col">
