@@ -65,78 +65,7 @@
         </div>
       </div>
     </header>
-   
-    <DIV class="InteriorHeader">
-      <div class="TextContainer">';
-        $query = "SELECT prix FROM offre where id_offre=1";
-        $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
-        echo '
-        <span class="Title">Bienvenu '.$_SESSION["login"].' </span>
-        <span class="SubTitle">Obtenez votre code de la route pour <b STYLE="font-size: 30px;">'.$ligne[0].' DH</b></span>
-        
-        <div class="valid-offres">
-          <span><img src="../IMG/check.png" alt="">2 500 questions de code en ligne conformes &agrave; l\'examen</span>
-          <span><img src="../IMG/check.png" alt="">Entra&icirc;nez-vous n\'importe o&ugrave; et n\'importe quand en illimit&eacute;</span>
-          <span><img src="../IMG/check.png" alt="">Une &eacute;quipe p&eacute;dagogique pr&ecirc;te &agrave; accompagner votre r&eacute;ussite</span>
-        </div>
-        <span class="buttons"><div class="button">Acheter le pack code</div> <div class="Essayer">Essayer gratuitement</div></span>
-      </div>
-      <img src="../IMG/boy-exam.jpg" class="boy">
-    </DIV>
-    <DIV class="InteriorBottomBar">
-      L\'une des meilleurs Auto-école au Maroc
-      <span>SAYRATY est devenu la nouvelle façon de préparer son code de la route</span>
-    </DIV>  
-    <div class="card-container">';
-        $query = "SELECT * FROM Avis";
-        $i=0;$avis;$nom;$note;$photo;
-        if($result = mysqli_query($connect,$query)){
-          while($ligne = mysqli_fetch_row($result)){
-            if($ligne[3]&&$ligne[2]>2&&$i<3){
-              $avis[$i]=$ligne[1];
-              $note[$i]=$ligne[2];
-              $nom[$i]=$ligne[4];
-              $i++;
-            }
-            
-          }
-        }
-        for($j=0;$j<$i;$j++){
-
-          $query = "SELECT Nom,PHOTO FROM Candidat WHERE login_candidat='".$nom[$j]."'";
-          if($result = mysqli_query($connect,$query)){
-            while($ligne= mysqli_fetch_row($result)){
-              $nom[$j]=$ligne[0];
-              $photo[$j]=$ligne[1];
-            }
-          }
-          echo '          
-            <div class="card">
-            <div class="row">
-            <img src="'.$photo[$j].'" alt="">
-            <div class="nom">
-          ';
-          echo '<h4>'.$nom[$j].'</h4>      
-            <span>
-          ';
-          for($t=0;$t<5;$t++){
-            if($t<$note[$j]){
-              echo '<i class="fa-solid fa-star"></i> ';
-            }
-            else{
-              echo '<i class="fa-regular fa-star"></i> ';
-            }
-          }
-          echo '</span>
-              </div>
-            </div>
-            <p>'.$avis[$j].'</p>
-          </div>';
-        }
-      echo'
-    </div>    
-  </DIV>	
-  <footer>
+    <footer>
       <DIV class="FooterContainer">
         <DIV class="Footer-col">
           <h4>Nos Horraires</h4>

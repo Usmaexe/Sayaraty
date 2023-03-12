@@ -28,8 +28,8 @@
         <header>
           <img src="../IMG/SAYARATY_LOGO.png">
           <UL class="Nav">
-            <LI class = "item1"><a href="../index.php">ACCEUIL</a></LI>
-            <LI class = "item2"><a href="../Acceuil/A-propos.html">&Agrave PROPOS</a></LI>
+            <LI class = "item1"><a href="index.php">ACCEUIL</a></LI>
+            <LI class = "item2"><a href="../Acceuil/A-propos.php">&Agrave PROPOS</a></LI>
             <LI class = "item3"><a href="../Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
             <LI class = "item4"><a href="../Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
           </UL>';
@@ -49,15 +49,15 @@
                   <img src="../IMG/modify.png" alt="">
                   <P>Modifier Profile</P>
                 </a>
-                <a href="CoursQuest.html" class="sub-menu-link">
+                <a href="CoursQest.php" class="sub-menu-link">
                   <img src="../IMG/cours.png" alt="">
                   <P>Cours & Questionnaire</P>
                 </a>
-                <a href="EmploiTemps.html" class="sub-menu-link">
+                <a href="EmploiTemps.php" class="sub-menu-link">
                   <img src="../IMG/calendar.png" alt="">
                   <P>Emploi du temps</P>
                 </a>
-                <a href="Inscription.php" class="sub-menu-link">
+                <a href="InscriptionExamen.php" class="sub-menu-link">
                   <img src="../IMG/testing.png" alt="">
                   <P>S\'insrire au examens</P>
                 </a>
@@ -96,7 +96,7 @@
                   <label>Nom</label><input type="text" id="name" name="nom" value="'.$ligne[2].'"required>
                 </div>
                 <div class="block">
-                  <label>Login</label><input type="text" id="mail" name="login" value="'.$ligne[0].'" required>
+                  <label>Login</label><input type="text" id="mail" name="login" value="'.$ligne[0].'" READONLY required>
                 </div>
               </div>
               <div class="secondBlock">

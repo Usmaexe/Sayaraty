@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 01:04 PM
+-- Generation Time: Mar 12, 2023 at 01:06 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -95,13 +95,13 @@ CREATE TABLE `candidat` (
 --
 
 INSERT INTO `candidat` (`Login_candidat`, `Password`, `Nom`, `Email_candidat`, `Sexe_candidat`, `Num_telephone`, `Num_CIN_candidat`, `Date_de_naissance`, `Date_d_inscription`, `Prix_payer`, `Nb_heures`, `Statut`, `PHOTO`, `Adresse`) VALUES
-('AdilTl', 'Adilerr-9', 'Adil Taouil', 'AdilTl_@gmail.com', 'Homme', '+212-678341778', 'S891234', '2000-08-31', '2023-02-10', 3600, 12, 0, 'IMG/Taouil.jpg.crdownload', NULL),
-('Amixou', 'AOIEZKDJIO8', 'Amina', 'oussama.anou21@ump.ac.ma', 'Femme', '0624768295', 'B0124', '2000-12-20', '2023-03-07', 0, 0, 0, '../IMG/Candidat.jpg', '15 Boulevard Hamid ElAssri, Hay boussekora'),
-('kizuns', 'OZEIDKEZI3813', 'Hmito', 'Hmitoo03@gmail.com', 'Homme', '0694768212', 'O9128', '2003-08-09', '2023-03-07', 0, 0, 0, '../IMG/Candidat.jpg', NULL),
-('logos', 'oui', 'karim', 'oussama.anou21@ump.ac.ma', 'Homme', '0624768295', 'E01241', '2003-09-12', '2023-03-07', 0, 0, 0, '../IMG/Candidat.jpg', NULL),
-('Mohamed_Erramach', 'mohamed_50!', 'Mohamed Erramach', 'MohaErr9@gmail.com', 'Homme', '+212-789125366', 'H91244', '1986-02-15', '2023-02-20', 3000, 10, 0, 'IMG/Erramach.jpeg', NULL),
-('Oumniah_El', '0mniaH.22', 'Oumniah Elkaabi', 'OumniaH3l@gmail.com', 'Femme', '+212-679209405', 'F87332', '1992-05-01', '2023-01-31', 2900, 10, 0, 'IMG/Oumniah.jpg', NULL),
-('YOU', 'mohamed_50!', 'Oussama Anou', 'oussama.anou21@ump.ac.ma', 'Homme', '0624768295', 'S0987', '2000-03-04', '2023-03-06', 0, 0, 0, '../IMG/Candidat.jpg', NULL);
+('AdilTl', 'Adilerr-9', 'Adil Taouil', 'AdilTl_@gmail.com', 'Homme', '+212-678341778', 'S891234', '2000-08-31', '2023-02-10', 3600, 12, 0, '../IMG/Taouil.jpg', NULL),
+('Amixou', 'non', 'Mohammed', 'oussama.anou21@ump.ac.ma', 'Homme', '0624768295', 'B0124', '2000-12-20', '2023-03-07', 0, 0, 0, '../IMG/Erramach.jpeg', '15 Boulevard Hamid ElAssri, Hay boussekora'),
+('kizuns', 'OZEIDKEZI3813', 'Hmito', 'Hmitoo03@gmail.com', 'Homme', '0694768212', 'O9128', '2003-08-09', '2023-03-07', 0, 0, 0, '../IMG/image.png', NULL),
+('logos', 'oui', 'karim', 'oussama.anou21@ump.ac.ma', 'Homme', '0624768295', 'E01241', '2003-09-12', '2023-03-07', 0, 0, 0, '../IMG/image.png', NULL),
+('Mohamed_Erramach', 'mohamed_50!', 'Mohamed Erramach', 'MohaErr9@gmail.com', 'Homme', '+212-789125366', 'H91244', '1986-02-15', '2023-02-20', 3000, 10, 0, '../IMG/Erramach.jpeg', NULL),
+('Oumniah_El', '0mniaH.22', 'Oumniah Elkaabi', 'OumniaH3l@gmail.com', 'Femme', '+212-679209405', 'F87332', '1992-05-01', '2023-01-31', 2900, 10, 0, '../IMG/Oumniah.jpg', NULL),
+('YOU', 'mohamed_50!', 'Oussama Anou', 'oussama.anou21@ump.ac.ma', 'Homme', '0624768295', 'S0987', '2000-03-04', '2023-03-06', 0, 0, 0, '../IMG/image.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,10 +111,17 @@ INSERT INTO `candidat` (`Login_candidat`, `Password`, `Nom`, `Email_candidat`, `
 
 CREATE TABLE `examen` (
   `ID_EXAMEN` int(11) NOT NULL,
-  `HORAIR` varchar(50) DEFAULT NULL,
-  `Lieu` varchar(20) DEFAULT NULL,
-  `Id_candidat` varchar(30) DEFAULT NULL
+  `HORAIRE` varchar(20) DEFAULT NULL,
+  `Id_candidat` varchar(30) DEFAULT NULL,
+  `DATE` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `examen`
+--
+
+INSERT INTO `examen` (`ID_EXAMEN`, `HORAIRE`, `Id_candidat`, `DATE`) VALUES
+(1, '13:00', 'Amixou', '2024-05-03');
 
 -- --------------------------------------------------------
 
@@ -311,6 +318,12 @@ ALTER TABLE `vehicule`
 --
 ALTER TABLE `avis`
   MODIFY `id_avis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `examen`
+--
+ALTER TABLE `examen`
+  MODIFY `ID_EXAMEN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `message`

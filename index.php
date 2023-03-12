@@ -1,5 +1,6 @@
 <?PHP
   require("./PHP/Connexion_BD.php");
+  session_start();
 ?>
 <!DOCTYPE HTML>
 <HTML>
@@ -20,7 +21,7 @@
     <header>
       <img src="IMG/SAYARATY_LOGO.png">
       <UL class="Nav">
-        <LI class = "item1"><a href="./index.php">ACCEUIL</a></LI>
+        <LI class = "item1"><a href="index.php">ACCEUIL</a></LI>
         <LI class = "item2"><a href="./Acceuil/A-propos.php">&Agrave; PROPOS</a></LI>
         <LI class = "item3"><a href="./Acceuil/Nos-offres.php">NOS OFFRES</a></LI>
         <LI class = "item4"><a href="./Acceuil/Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
@@ -120,12 +121,13 @@
                       while($ligne= mysqli_fetch_row($result)){
                         $nom[$j]=$ligne[0];
                         $photo[$j]=$ligne[1];
+                        $photo[$j]=substr_replace($photo[$j],"",0,1);
                       }
                     }
                     echo '          
                       <div class="card">
-                      <div class="row">
-                      <img src="./'.$photo[$j].'" alt="">
+                      <div class="row"> 
+                      <img src="'.$photo[$j].'" alt="">
                       <div class="nom">
                     ';
                     echo '<h4>'.$nom[$j].'</h4>      

@@ -1,0 +1,43 @@
+h1{
+  position: relative;
+  margin-bottom:14px;
+}
+h1::before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: -7px;
+  height: 5px;
+  background-color: #ffb52e;
+  box-sizing: border-box;
+  width: 99%;
+}
+.Container{
+  width:68%!important;
+}
+.rightContainer{
+  color:#fff;
+}
+.Sentence{
+  font-weight: 500!important;
+  text-transform: none;
+}
+.block,.first,.second{
+  flex-basis: 50%;
+  display:flex;
+  flex-direction: column;
+  gap:0.6em!important;
+}
+.nums{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:1em;
+}
+.nums input,.nums select{
+  font:500 18px 'Poppins';
+  padding:10px;
+  border-radius: 10px;
+  border : solid 1px #4e4e4e;
+  margin-top:10px;
+}

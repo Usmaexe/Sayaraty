@@ -22,6 +22,20 @@ textarea{
   align-items: center;
   clear:none;
 }
+h1{
+  position: relative;
+  margin-bottom:14px;
+}
+h1::before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: -7px;
+  height: 5px;
+  background-color: #ffb52e;
+  box-sizing: border-box;
+  width: 99%;
+}
 .TheHeader{
   height: 60px;
   font:700 50px 'Poppins';
@@ -103,7 +117,7 @@ textarea{
 	font:500 20px 'Poppins';
 	text-transform: capitalize;
 	text-decoration: none;
-	color: #dadada;
+	color: #fff;
 	display: inline;
 	transition: all 0.3s ease;
 }

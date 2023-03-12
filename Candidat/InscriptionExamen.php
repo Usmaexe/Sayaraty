@@ -11,8 +11,10 @@
 		<TITLE>Sayarty - Espace Candidat</TITLE>
     <!-- <script type="module" src="../JS/Page-Candidat.js"></script> -->
     <link rel="icon" href="../IMG/SAYARATY_Icon.png">
+		<link rel="stylesheet" href="../CSS/style-Examen.css">
 		<link rel="stylesheet" href="../CSS/style-index.css">
 		<link rel="stylesheet" href="../CSS/style-candidat.css">
+		<link rel="stylesheet" href="../CSS/style-contacter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.cdnfonts.com/css/monument-extended" rel="stylesheet">
@@ -65,78 +67,48 @@
         </div>
       </div>
     </header>
-   
-    <DIV class="InteriorHeader">
-      <div class="TextContainer">';
-        $query = "SELECT prix FROM offre where id_offre=1";
-        $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
-        echo '
-        <span class="Title">Bienvenu '.$_SESSION["login"].' </span>
-        <span class="SubTitle">Obtenez votre code de la route pour <b STYLE="font-size: 30px;">'.$ligne[0].' DH</b></span>
-        
-        <div class="valid-offres">
-          <span><img src="../IMG/check.png" alt="">2 500 questions de code en ligne conformes &agrave; l\'examen</span>
-          <span><img src="../IMG/check.png" alt="">Entra&icirc;nez-vous n\'importe o&ugrave; et n\'importe quand en illimit&eacute;</span>
-          <span><img src="../IMG/check.png" alt="">Une &eacute;quipe p&eacute;dagogique pr&ecirc;te &agrave; accompagner votre r&eacute;ussite</span>
-        </div>
-        <span class="buttons"><div class="button">Acheter le pack code</div> <div class="Essayer">Essayer gratuitement</div></span>
-      </div>
-      <img src="../IMG/boy-exam.jpg" class="boy">
-    </DIV>
-    <DIV class="InteriorBottomBar">
-      L\'une des meilleurs Auto-école au Maroc
-      <span>SAYRATY est devenu la nouvelle façon de préparer son code de la route</span>
-    </DIV>  
-    <div class="card-container">';
-        $query = "SELECT * FROM Avis";
-        $i=0;$avis;$nom;$note;$photo;
-        if($result = mysqli_query($connect,$query)){
-          while($ligne = mysqli_fetch_row($result)){
-            if($ligne[3]&&$ligne[2]>2&&$i<3){
-              $avis[$i]=$ligne[1];
-              $note[$i]=$ligne[2];
-              $nom[$i]=$ligne[4];
-              $i++;
-            }
-            
-          }
-        }
-        for($j=0;$j<$i;$j++){
-
-          $query = "SELECT Nom,PHOTO FROM Candidat WHERE login_candidat='".$nom[$j]."'";
-          if($result = mysqli_query($connect,$query)){
-            while($ligne= mysqli_fetch_row($result)){
-              $nom[$j]=$ligne[0];
-              $photo[$j]=$ligne[1];
-            }
-          }
-          echo '          
-            <div class="card">
-            <div class="row">
-            <img src="'.$photo[$j].'" alt="">
-            <div class="nom">
-          ';
-          echo '<h4>'.$nom[$j].'</h4>      
-            <span>
-          ';
-          for($t=0;$t<5;$t++){
-            if($t<$note[$j]){
-              echo '<i class="fa-solid fa-star"></i> ';
-            }
-            else{
-              echo '<i class="fa-regular fa-star"></i> ';
-            }
-          }
-          echo '</span>
-              </div>
+    <div class="Title">
+      <h1 class="TheHeader">INSCRIVEZ-VOUS</h1>
+      <p class="Sentence">S\'inscrire maintenant pour passer votre <b>examen</b> quand vous voulez</p>
+    </div>
+    <div class="Container">
+      <div class="leftContainer">     
+        <form name="formulaire" class="formulaire" action="InscriptionExamen.php" method="post">
+          <div class="nom_email">
+            <div class="block">
+              <label>Email</label><input type="text" id="mail" name="email" required>
             </div>
-            <p>'.$avis[$j].'</p>
-          </div>';
-        }
-      echo'
-    </div>    
-  </DIV>	
-  <footer>
+            <div class="block">
+              <label>Numéro télephone</label><input type="text" name="num_tel" class="name-style" autocomplete="off" required> 
+            </div>
+          </div>
+          <div class="nums">
+            <div class="first">
+              <label>Date de l\'examen</label><input type="date" name="date_examen" class="name-style" autocomplete="off" required>                              
+            </div>                             
+            <div class="second">
+              <label>Lieu de l\'examen</label>
+              <SELECT name="Horaire" class="name-style" autocomplete="off" required>
+                <option name="9:00" value="9:00">9:00 -> 10:30</option>
+                <option name="11:00" value="11:00">11:00 -> 12:30</option>
+                <option name="13:00" value="13:00">13:00 -> 15:30</option>
+              </SELECT>
+            </div>               
+          </div>                             
+          <div class="submit">
+           <input name="submit-button" type="submit" value="S\'inscrire">
+          </div>
+        </form>
+      </div>
+      <div class="rightContainer">
+        <UL class="coordonnees">
+          <LI><i class="fa-solid fa-location-dot"></i><A HREF="">30 Bv lkhatabi, Hay Salam, Oujda</A></LI>
+          <LI><i class="fa-solid fa-phone"></i><A HREF="">06 24 67 82 90</A></LI>
+          <LI><i class="fa-solid fa-envelope"></i><A HREF="">AutoEcol99@gmail.com</A></LI>
+        </UL>
+      </div>
+    </div>
+    <footer>
       <DIV class="FooterContainer">
         <DIV class="Footer-col">
           <h4>Nos Horraires</h4>
@@ -184,5 +156,71 @@
   </script>
 </HTML>
 ';
+if(isset($_POST["submit-button"])){  
+  $insert = true;$error;$exist = false;
+  $query = "SELECT * FROM Examen";
+  $query2 = "SELECT email_candidat,Num_telephone FROM candidat where login_candidat='".$_SESSION["login"]."'";
+  $ligne2=mysqli_fetch_row(mysqli_query($connect,$query2));
+  if($result=mysqli_query($connect,$query)){
+    while($ligne=mysqli_fetch_row($result)){
+      if($ligne[2]==$_SESSION["login"]){
+        echo'
+          <SCRIPT>
+             // Get all the input fields on the forum
+              const inputFields = document.querySelectorAll(\'input, select\');
 
+              // Loop through the input fields and disable them
+              inputFields.forEach(inputField => {
+                inputField.disabled = true;
+              });
+            document.formulaire.date_examen.value="'.$ligne[3].'";
+            let option = "'.$ligne[1].'";
+            document.formulaire.Horaire.options.namedItem(option).selected = true;
+            document.formulaire.innerHTML = "<DIV class=\"nom-email\" style=\"color:red;\">Vous étes déja inscrit!</DIV>" + document.formulaire.innerHTML;
+           
+            document.formulaire.email.value="'.$ligne2[0].'";
+            document.formulaire.num_tel.value="'.$ligne2[1].'";
+
+          </SCRIPT>
+        ';
+        $exist=true;
+        break;
+      }
+    }
+  }
+  if(!preg_match("#^[\w\.]+@([\w]+\.)+[\w]{2,4}$#",$_POST["email"])){     
+    $error="email";
+    $insert=false;
+  }
+  if(!preg_match("#^(0|\+\d{1,3}-)\d{9}#",$_POST["num_tel"])){
+    $error="Numéro télephone";
+    $insert=false;
+  }
+  if(date('Y-m-d', strtotime(date('m/d/Y') . " + " . 30 . " days"))>$_POST["date_examen"]){
+    $error="Date Examen";
+    $insert=false;
+  }
+  if(!$insert&&!$exist){
+    echo '
+    <SCRIPT>
+      alert("'.$error.' Incorrecte");
+      document.formulaire.email.value="'.$_POST["email"].'";
+      document.formulaire.num_tel.value="'.$_POST["num_tel"].'";
+      document.formulaire.date_examen.value="'.$_POST["date_examen"].'";
+      let option = "'.$_POST["Horaire"].'";
+      document.formulaire.Horaire.options.namedItem(option).selected = true;
+    </SCRIPT>
+    ';
+  }
+  else if(!$exist){
+    $query = "INSERT INTO EXAMEN(HORAIRE,Id_CANDIDAT,DATE) VALUES('".$_POST["Horaire"]."','".$_SESSION["login"]."','".$_POST["date_examen"]."')";
+    mysqli_query($connect,$query);
+    echo'
+      <SCRIPT>
+        alert("Bien inscrite!");
+      </SCRIPT>
+    ';
+
+  }
+}
 ?>

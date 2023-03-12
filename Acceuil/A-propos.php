@@ -1,3 +1,8 @@
+<?PHP
+  require("../php/Connexion_BD.php");
+  session_start();
+?>
+
 <!DOCTYPE HTML>
 <HTML>
 	<HEAD>
@@ -20,52 +25,60 @@
     <header>
       <img src="../IMG/SAYARATY_LOGO.png">
       <UL class="Nav">
-        <LI class = "item1"><a href="../index.php">ACCEUIL</a></LI>
-        <LI class = "item2"><a href="A-propos.html">&Agrave; PROPOS</a></LI>
-        <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
-        <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
-      </UL>
       <?PHP
-        session_start();
         if(isset($_SESSION["login"])){
-          $query = "SELECT PHOTO FROM Candidat WHERE Login_candidat='".$_SESSION["login"]."'";
-          $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
-          echo '
-          <span class="mon-compte" onclick="toggleMenu()"><img src="'.$ligne[0].'" class="user-pic"> <span>Mon compte</span></span>
-          <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-              <div class="user-info">
-                <img src="'.$ligne[0].'" class="user-pic">
-                <h2>'.$_SESSION["login"].'</h2>
-                <hr>
-                <a href="ModifierProfile.php" class="sub-menu-link">
+        echo '
+          <LI class = "item1"><a href="../Candidaat/">ACCEUIL</a></LI>
+          <LI class = "item2"><a href="A-propos.php">&Agrave PROPOS</a></LI>
+          <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
+          <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
+        </UL>
+        ';
+        $query = "SELECT PHOTO FROM Candidat WHERE Login_candidat='".$_SESSION["login"]."'";
+        $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+        echo '
+        <span class="mon-compte" onclick="toggleMenu()"><img src="'.$ligne[0].'" class="user-pic"> <span>Mon compte</span></span>
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="'.$ligne[0].'" class="user-pic">
+              <h2>'.$_SESSION["login"].'</h2>
+              <hr>
+              <a href="../Candidat/ModifierProfile.php" class="sub-menu-link">
                   <img src="../IMG/modify.png" alt="">
                   <P>Modifier Profile</P>
-                </a>
-                <a href="CoursQuest.html" class="sub-menu-link">
-                  <img src="../IMG/cours.png" alt="">
-                  <P>Cours & Questionnaire</P>
-                </a>
-                <a href="EmploiTemps.html" class="sub-menu-link">
-                  <img src="../IMG/calendar.png" alt="">
-                  <P>Emploi du temps</P>
-                </a>
-                <a href="Inscription.php" class="sub-menu-link">
-                  <img src="../IMG/testing.png" alt="">
-                  <P>S\'insrire au examens</P>
-                </a>
-                <a href="../PHP/Deconnexion.php" class="sub-menu-link">
-                  <img src="../IMG/logout.png" style="padding: 0px 0px 0px 4px; width: 26px" alt="">
-                  <P>D&eacute;connexion</P>
-                </a>
-              </div>
+              </a>
+              <a href="../Candidat/CoursQest.php" class="sub-menu-link">
+                <img src="../IMG/cours.png" alt="">
+                <P>Cours & Questionnaire</P>
+              </a>
+              <a href="../Candidat/EmploiTemps.php" class="sub-menu-link">
+                <img src="../IMG/calendar.png" alt="">
+                <P>Emploi du temps</P>
+              </a>
+              <a href="../Candidat/InscriptionExamen.php" class="sub-menu-link">
+                <img src="../IMG/testing.png" alt="">
+                <P>S\'insrire au examens</P>
+              </a>
+              <a href="../PHP/Deconnexion.php" class="sub-menu-link">
+                <img src="../IMG/logout.png" style="padding: 0px 0px 0px 4px; width: 26px" alt="">
+                <P>D&eacute;connexion</P>
+              </a>
             </div>
           </div>
-          ';
-        }
-        else{
-          echo '<a class="item5" href="./Acceuil/Connexion_inscription.php"> <span>Connexion</span></a></DIV>';
-        }
+        </div>
+        ';
+      }
+      else{
+        echo '
+          <LI class = "item1"><a href="../">ACCEUIL</a></LI>
+          <LI class = "item2"><a href="A-propos.php">&Agrave PROPOS</a></LI>
+          <LI class = "item3"><a href="Nos-offres.php">NOS OFFRES</a></LI>
+          <LI class = "item4"><a href="Contactez-nous.php">CONTACTEZ-NOUS</a></LI>
+        </UL>
+        <a class="item5" href="./Acceuil/Connexion_inscription.php"> <span>Connexion</span></a></DIV>
+        ';
+      }
       ?>
     </header>
     <div class="about-container">
