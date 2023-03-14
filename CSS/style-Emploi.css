@@ -1,0 +1,33 @@
+.tableContainer{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:92%;
+  gap:5em;
+  margin:10px auto; margin-bottom: 100px;
+}
+.Sentence{
+  text-transform: none;
+  font-size: 20px;
+}
+TABLE{
+  padding: 20px;
+  width:100%;
+  height: 400px;
+  text-align: center;
+  font:500 14px 'Noto Sans';
+}
+td, th{
+  border:solid 1px #aeaeae;
+  width: 150px!important;
+  padding:10px
+}
+TH{
+  font-size: 18px;
+}
+TR :first-child{
+  width: 100px;
+  text-align: left;
+}

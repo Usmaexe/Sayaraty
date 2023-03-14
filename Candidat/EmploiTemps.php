@@ -13,14 +13,15 @@
     <link rel="icon" href="../IMG/SAYARATY_Icon.png">
 		<link rel="stylesheet" href="../CSS/style-index.css">
 		<link rel="stylesheet" href="../CSS/style-candidat.css">
+		<link rel="stylesheet" href="../CSS/style-contacter.css">
+		<link rel="stylesheet" href="../CSS/style-Emploi.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.cdnfonts.com/css/monument-extended" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <link href="//db.onlinewebfonts.com/c/9563028603929a5ec058577b3fb5520a?family=Whipsmart" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
   </HEAD>
 	<BODY>
     <header>
@@ -65,17 +66,175 @@
         </div>
       </div>
     </header>
+    <DIV class="tableContainer">
+      <DIV class="Title">
+      <h1 class="TheHeader">Emploi de temps</h1>';
+      $query = "SELECT nb_heures FROM CANDIDAT where login_candidat='".$_SESSION["login"]."'";
+      $ligne = mysqli_fetch_row(mysqli_query($connect,$query));
+      echo'
+      <p class="Sentence">
+          Nombre d\'heure de conduite: <b>'.$ligne[0].'</b>
+      </p>';
+      echo'
+      </DIV>
+      <TABLE CELLSPACING=0>
+        <TR>
+          <TH></TH>
+          <TH>9:00</TH>
+          <TH>10:00</TH>
+          <TH>11:00</TH>
+          <TH>12:00</TH>
+          <TH>14:00</TH>
+          <TH>15:00</TH>
+          <TH>16:00</TH>
+          <TH>17:00</TH>
+        </TR>';
+        $query="SELECT * FROM SEANCE where id_candidat='".$_SESSION["login"]."' AND type='Theorique'";
+        $j=0;
+        if($result=mysqli_query($connect,$query)){
+          while($ligne=mysqli_fetch_row($result)){
+            $lignes[$j]=$ligne;
+            if($heures=explode("-", $lignes[$j][1])){
+              $debut[$j]=explode(":",$heures[0]);
+              $fin[$j] =explode(":",$heures[1]);
+              $p[$j]=(int)$fin[$j][0]-(int)$debut[$j][0];
+            }
+            $j++;
+          }
+        }
+        $query2="SELECT * FROM SEANCE where id_candidat='".$_SESSION["login"]."' AND type='Pratique'";
+        $j2=0;
+        if($result=mysqli_query($connect,$query2)){
+          while($ligne=mysqli_fetch_row($result)){
+            $lignes2[$j2]=$ligne;
+            if($heures=explode("-", $lignes2[$j2][1])){
+              $debut2[$j2]=explode(":",$heures[0]);
+              $fin2[$j2] =explode(":",$heures[1]);
+              $p2[$j2]=(int)$fin2[$j2][0]-(int)$debut2[$j2][0];
+            }
+            $j2++;
+          }
+        }
+        $jours=["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+        if($j!=0&&$j2!=0){
+          $k=0;$k2=0;$increment=false;$increment2=false;$doit=true;
+          for($i=0;$i<12;$i++){
+            if($i%2==0){
+            echo'
+              <TR>
+                <TD>'.$jours[$i/2].'</TD>';
+            }
+            if($doit){
+              if($k2<sizeof($lignes2)&&$lignes2[$k2][6]==$jours[$i/2]&&$lignes2[$k2][2]=="Pratique"){
+              $query = "SELECT MODELE FROM VEHICULE WHERE Num_matricule='".$lignes2[$k2][5]."'";
+              $voiture = mysqli_fetch_row(mysqli_query($connect,$query));
+              switch($debut2[$k2][0]){
+                case "9":{
+                  echo '<TD><strong>Séance Pratique<BR>Moniteur: '.$lignes2[$k2][4].'<BR>Véhicule: '.$voiture[0].'</strong></TD>';
+                  for($t=$p2[$k2];$t<4;$t++){
+                    echo '<TD style="background-color:#cfcfcf"></TD>';
+                  }
+                }break;
+                case "10":{
+                  echo '<TD style="background-color:#cfcfcf"></TD>';
+                  echo '<TD><strong>Séance Pratique<BR>Moniteur: '.$lignes2[$k2][4].'<BR>Véhicule: '.$voiture[0].'</strong></TD>';
+                  for($t=$p2[$k2];$t<4;$t++){
+                    echo '<TD style="background-color:#cfcfcf"></TD>';
+                  }
+                }break;
+                case "11":{
+                  echo '<TD style="background-color:#cfcfcf"></TD>';
+                  echo '<TD style="background-color:#cfcfcf"></TD>';
+                  echo '<TD><strong>Séance Pratique<BR>Moniteur: '.$lignes2[$k2][4].'<BR>Véhicule: '.$voiture[0].'</strong></TD>';
+                  for($t=$p2[$k2];$t<4;$t++){
+                    echo '<TD style="background-color:#cfcfcf"></TD>';
+                  }
+                }break;
+                case "12":{
+                  for($t=$p2[$k2];$t<4;$t++){
+                    echo '<TD style="background-color:#cfcfcf"></TD>';
+                  }
+                  echo '<TD><strong>Séance Pratique<BR>Moniteur: '.$lignes2[$k2][4].'<BR>Véhicule: '.$voiture[0].'</strong></TD>';
+                }break;
+              }
+            $k2++;
+            }
+            else{
+              for($t=0;$t<4;$t++){
+                echo '<TD style="background-color:#cfcfcf"></TD>';
+              }
+            }
+            $doit=false;
+          }
+          else{
+            if($k<sizeof($lignes)&&$lignes[$k][2]=="Theorique"){
+                switch($debut[$k][0]){
+                  case "14":{
+                    echo '<TD colspan="'.$p[$k].'"><strong>Séance Théorique<BR>Moniteur: '.$lignes[$k][4].'</strong></TD>';
+                    for($t=$p[$k];$t<4;$t++){
+                      echo '<TD style="background-color:#cfcfcf"></TD>';
+                    }
+                  }break;
+                  case "15":{
+                    echo '<TD style="background-color:#cfcfcf"></TD>';
+                    echo '<TD colspan="'.$p[$k].'"><strong>Séance Théorique<BR>Moniteur: '.$lignes[$k][4].'</strong></TD>';
+                    for($t=$p[$k];$t<3;$t++){
+                      echo '<TD style="background-color:#cfcfcf"></TD>';  
+                    }
+                  }break;
+                  case "16":{
+                    echo '<TD colspan="2" style="background-color:#cfcfcf"></TD>';
+                    echo '<TD colspan="'.$p[$k].'"><strong>Séance Théorique<BR>Moniteur'.$lignes[$k][4].'</strong></TD>';
+                  }break;
+                }
+            $k++;
+            }
+            else{
+              for($t=0;$t<4;$t++){
+                echo '<TD style="background-color:#cfcfcf"></TD>';
+              }
+            }
+            $doit=true;
+          }
+          if($i%2!=0){echo'</TR>';}
+        }
+        }
+        else{
+          for($i=0;$i<6;$i++){
+            echo'
+              <TR class="vide">
+                <TD>'.$jours[$i].'</TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD></TD>
+                <TD>Séances théoriques</TD>
+                <TD>Séances théoriques</TD>
+                <TD>Séances théoriques</TD>
+                <TD>Séances théoriques</TD>
+              </TR>
+            ';
+          }
+        }
+
+        echo '
+        <TR>
+          <TD>Dimanche</TD>
+          <TD COLSPAN="8" style="font:700 20px \'Poppins\';">Pas d\'études</TD>
+        </TR>
+      </TABLE>
+    </DIV>
     <footer>
       <DIV class="FooterContainer">
         <DIV class="Footer-col">
           <h4>Nos Horraires</h4>
           <UL class="Horraire" style="color: #bbb;">
-            <LI>Lundi | 09:00 - 17:00</LI>
-            <LI>Mardi | 09:00 - 17:00</LI>
-            <LI>Mercredi | 09:00 - 17:00</LI>
-            <LI>Jeudi | 09:00 - 17:00</LI>
+            <LI>Lundi | 09:00 - 18:00</LI>
+            <LI>Mardi | 09:00 - 18:00</LI>
+            <LI>Mercredi | 09:00 - 18:00</LI>
+            <LI>Jeudi | 09:00 - 18:00</LI>
             <LI>Vendredi | 09:00 - 12:00</LI>
-            <LI>Samedi | 09:00 - 19:00</LI>
+            <LI>Samedi | 09:00 - 18:00</LI>
           </UL>
         </DIV>
         <DIV class="Footer-col">

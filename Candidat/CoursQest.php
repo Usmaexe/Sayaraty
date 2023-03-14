@@ -113,38 +113,40 @@
         <div class="Ltitle">
           <img src ="../IMG/learning.png"><span>Lesson 1: Signalisation Verticale<span>
         </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 1: Panneaux<span>
-          <a href="download.php?id=1">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 2: Panonceaux<span>
-          <a href="download.php?id=2">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 3: Dangers<span>
-          <a href="download.php?id=3">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 4: Interdiction<span>
-          <a href="download.php?id=4">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 5: Obligation<span>
-          <a href="download.php?id=5">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 6: Indication<span>
-          <a href="download.php?id=6">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 7: Direction<span>
-          <a href="download.php?id=7">Download PDF</a>
-        </div>
-        <div class="chapter">
-          <img src ="../IMG/lesson.png"><span>Chapitre 8: Localisation<span>
-          <a href="download.php?id=8">Download PDF</a>
-        </div>
+        <UL class="av">
+          <div class="chapter">
+            <img src ="../IMG/lesson.png">
+            <LI><a href="../PHP/download.php?id=15">Chapitre 1: Panneaux</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png">
+            <LI><a href="../PHP/download.php?id=14">Chapitre 2: Panonceaux</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span><span>
+            <LI><a href="../PHP/download.php?id=11">Chapitre 3: Dangers</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span><span>
+            <LI><a href="../PHP/download.php?id=14">Chapitre 4: Interdiction</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span>
+            <LI><a href="../PHP/download.php?id=11">Chapitre 5: Obligation</a><span></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span><span>
+            <LI><a href="../PHP/download.php?id=11">Chapitre 6: Indication</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span><span>
+            <LI><a href="../PHP/download.php?id=14">Chapitre 7: Direction</a></LI>
+          </div>
+          <div class="chapter">
+            <img src ="../IMG/lesson.png"><span><span>
+            <LI><a href="../PHP/download.php?id=15">Chapitre 8: Localisation</a></LI>
+          </div>
+        </UL>
       </div>
     </div>
     <footer>

@@ -138,10 +138,10 @@ header img{
 }
 
 .InteriorHeader{
-  height:600px;
-  display:flex;
-  align-items: center;
-  justify-content: space-around;
+  height: 600px !important;
+  display:flex!important;
+  align-items: center!important;
+  justify-content: space-around!important;
 }
 .InteriorHeader p{
   margin-right:400px;

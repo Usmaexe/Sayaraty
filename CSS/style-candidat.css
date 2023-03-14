@@ -49,7 +49,7 @@ header span span{
 .mon-compte:hover::after{
   transform: scaleX(0.3);
 }
-.Nav Li a:hover:after,
+.Nav Li a:hover::after,
 .Nav Li a:focus::after{
   opacity: 1;
 }

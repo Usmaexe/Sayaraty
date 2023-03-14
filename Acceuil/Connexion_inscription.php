@@ -171,8 +171,6 @@ if(isset($_POST["submit-button1"])){
       if($isCandidat){
         echo'
           <SCRIPT>
-            alert("Bienvenu '.$_POST["logemail"].'");
-            //document.location = "test.php"
             document.location = "../Candidat";
           </SCRIPT> 
         ';
@@ -180,7 +178,6 @@ if(isset($_POST["submit-button1"])){
       else if($isMoniteur){
         echo'
           <SCRIPT>
-            alert("Bienvenu '.$_POST["logemail"].'");
             document.location = "../Moniteur";
           </SCRIPT> 
         ';
@@ -188,7 +185,6 @@ if(isset($_POST["submit-button1"])){
       else if($isAdmin){
         echo'
           <SCRIPT>
-            alert("Bienvenu '.$_POST["logemail"].'");
             document.location = "../Administrateur";
           </SCRIPT> 
         ';
